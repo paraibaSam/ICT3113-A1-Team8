@@ -1,0 +1,15 @@
+{
+  "name": "ticket-triage-service",
+  "version": "1.0.0",
+  "description": "ICT3113 Assignment 1 - Ticket Triage Service (baseline, synchronous)",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.21.0",
+    "node-fetch": "^2.7.0"
+  }
+}

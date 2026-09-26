@@ -1,0 +1,32 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    # CPU only - no GPU reservation, per the client's hardware constraint.
+    volumes:
+      - ollama_models:/root/.ollama
+    ports:
+      - "11434:11434" # exposed for convenience (e.g. `ollama pull` from host); not required by the service
+    healthcheck:
+      test: ["CMD-SHELL", "ollama list || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  triage-service:
+    build: ./service
+    depends_on:
+      ollama:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      OLLAMA_HOST: http://ollama:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2:1b}
+      DB_PATH: /app/data/tickets.db
+      LOG_PATH: /app/data/service.log
+    volumes:
+      - ./data:/app/data # persists the SQLite DB and service.log on the host, for JMeter reconciliation
+
+volumes:
+  ollama_models:
