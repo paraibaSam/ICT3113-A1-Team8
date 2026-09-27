@@ -2,6 +2,8 @@ services:
   ollama:
     image: ollama/ollama:latest
     # CPU only - no GPU reservation, per the client's hardware constraint.
+    environment:
+      OLLAMA_KEEP_ALIVE: "-1"
     volumes:
       - ollama_models:/root/.ollama
     ports:
