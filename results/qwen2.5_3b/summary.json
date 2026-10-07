@@ -1,0 +1,120 @@
+{
+  "model": "qwen2.5:3b",
+  "csv": "golden-set/ict3113_team8_golden_set_with_narratives.csv",
+  "baseUrl": "http://localhost:3000",
+  "accuracy": {
+    "total": 180,
+    "correct": 110,
+    "overall": 0.6111111111111112,
+    "perCategory": {
+      "Credit reporting": {
+        "total": 53,
+        "correct": 42,
+        "accuracy": 0.7924528301886793
+      },
+      "Debt collection": {
+        "total": 16,
+        "correct": 10,
+        "accuracy": 0.625
+      },
+      "Mortgage": {
+        "total": 26,
+        "correct": 24,
+        "accuracy": 0.9230769230769231
+      },
+      "Credit card": {
+        "total": 20,
+        "correct": 17,
+        "accuracy": 0.85
+      },
+      "Bank account or service": {
+        "total": 23,
+        "correct": 8,
+        "accuracy": 0.34782608695652173
+      },
+      "Consumer loan": {
+        "total": 19,
+        "correct": 2,
+        "accuracy": 0.10526315789473684
+      },
+      "Money transfer or service": {
+        "total": 23,
+        "correct": 7,
+        "accuracy": 0.30434782608695654
+      }
+    }
+  },
+  "confusion": {
+    "Credit reporting": {
+      "Credit reporting": 42,
+      "Debt collection": 0,
+      "Mortgage": 1,
+      "Credit card": 9,
+      "Bank account or service": 0,
+      "Consumer loan": 1,
+      "Money transfer or service": 0,
+      "(error/unmatched)": 0
+    },
+    "Debt collection": {
+      "Credit reporting": 2,
+      "Debt collection": 10,
+      "Mortgage": 1,
+      "Credit card": 2,
+      "Bank account or service": 1,
+      "Consumer loan": 0,
+      "Money transfer or service": 0,
+      "(error/unmatched)": 0
+    },
+    "Mortgage": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 24,
+      "Credit card": 1,
+      "Bank account or service": 0,
+      "Consumer loan": 1,
+      "Money transfer or service": 0,
+      "(error/unmatched)": 0
+    },
+    "Credit card": {
+      "Credit reporting": 1,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 17,
+      "Bank account or service": 1,
+      "Consumer loan": 1,
+      "Money transfer or service": 0,
+      "(error/unmatched)": 0
+    },
+    "Bank account or service": {
+      "Credit reporting": 1,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 11,
+      "Bank account or service": 8,
+      "Consumer loan": 1,
+      "Money transfer or service": 2,
+      "(error/unmatched)": 0
+    },
+    "Consumer loan": {
+      "Credit reporting": 0,
+      "Debt collection": 1,
+      "Mortgage": 9,
+      "Credit card": 7,
+      "Bank account or service": 0,
+      "Consumer loan": 2,
+      "Money transfer or service": 0,
+      "(error/unmatched)": 0
+    },
+    "Money transfer or service": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 8,
+      "Bank account or service": 7,
+      "Consumer loan": 1,
+      "Money transfer or service": 7,
+      "(error/unmatched)": 0
+    }
+  },
+  "errorCount": 0
+}
