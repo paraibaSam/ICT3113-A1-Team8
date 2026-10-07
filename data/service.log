@@ -2181,3 +2181,11 @@
 {"timestamp":"2026-10-06T15:49:50.889Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":8728}
 {"timestamp":"2026-10-06T15:50:05.757Z","type":"classification","ticket_id":1087,"category":"Credit card","model":"granite3.3:8b","classification_ms":14862,"fallback_used":false}
 {"timestamp":"2026-10-06T15:50:05.757Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":14865}
+{"timestamp":"2026-10-07T10:15:31.484Z","type":"startup","message":"ticket-triage-service listening on port 3000"}
+{"timestamp":"2026-10-07T10:15:43.581Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":10}
+{"timestamp":"2026-10-07T10:15:59.246Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":0}
+{"timestamp":"2026-10-07T10:21:07.046Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":1}
+{"timestamp":"2026-10-07T10:21:33.998Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":1}
+{"timestamp":"2026-10-07T10:28:13.680Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":0}
+{"timestamp":"2026-10-07T10:28:21.532Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":1}
+{"timestamp":"2026-10-07T10:29:19.221Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":1}
