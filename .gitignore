@@ -3,6 +3,7 @@ node_modules/
 data/*.db
 data/*.db-shm
 data/*.db-wal
+jmeter.log
 # NOTE: do NOT ignore data/*.log or JMeter .jtl files - the brief requires
 # keeping service logs and .jtl result files in the repository for every
 # reported run, so they can reconcile with your numbers.
