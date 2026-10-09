@@ -1,0 +1,44 @@
+service.log: 5908 lines, 2939 POST /tickets requests, 2939 classifications
+
+LOAD AND STRESS RUNS
+run                                 rows   log  model  gap median  gap max   result
+gemma3_1b/0.10rps/run1.jtl            30    30   true        8 ms   192 ms   OK
+gemma3_1b/0.10rps/run2.jtl            30    30   true        9 ms    33 ms   OK
+gemma3_1b/0.10rps/run3.jtl            30    30   true        9 ms    27 ms   OK
+gemma3_1b/0.20rps/run1.jtl            60    60   true       20 ms   113 ms   OK
+gemma3_1b/0.20rps/run2.jtl            60    60   true        9 ms    35 ms   OK
+gemma3_1b/0.20rps/run3.jtl            60    60   true        9 ms    31 ms   OK
+gemma3_4b/0.10rps/run1.jtl            30    30   true       21 ms   114 ms   OK
+gemma3_4b/0.10rps/run2.jtl            30    30   true       23 ms   108 ms   OK
+gemma3_4b/0.10rps/run3.jtl            30    30   true       22 ms   102 ms   OK
+gemma3_4b/0.20rps/run1.jtl            60    60   true       23 ms   115 ms   OK
+gemma3_4b/0.20rps/run2.jtl            60    60   true       23 ms   129 ms   OK
+gemma3_4b/0.20rps/run3.jtl            60    60   true       22 ms    75 ms   OK
+granite3.3_8b/0.10rps/run1.jtl        30    30   true       12 ms    38 ms   OK
+granite3.3_8b/0.10rps/run2.jtl        30    30   true       11 ms    36 ms   OK
+granite3.3_8b/0.10rps/run3.jtl        30    30   true       10 ms    53 ms   OK
+granite3.3_8b/0.20rps/run1.jtl        60    60   true       13 ms    36 ms   OK
+granite3.3_8b/0.20rps/run2.jtl        60    60   true       13 ms    80 ms   OK
+granite3.3_8b/0.20rps/run3.jtl        60    60   true       13 ms    32 ms   OK
+qwen2.5_3b/0.10rps/run1.jtl           30    30   true       12 ms    60 ms   OK
+qwen2.5_3b/0.10rps/run2.jtl           30    30   true       10 ms    95 ms   OK
+qwen2.5_3b/0.10rps/run3.jtl           30    30   true       10 ms    32 ms   OK
+qwen2.5_3b/0.20rps/run1.jtl           60    60   true       10 ms    32 ms   OK
+qwen2.5_3b/0.20rps/run2.jtl           60    60   true       10 ms    43 ms   OK
+qwen2.5_3b/0.20rps/run3.jtl           60    60   true       11 ms    41 ms   OK
+qwen2.5_7b/0.10rps/run1.jtl           30    30   true       10 ms    49 ms   OK
+qwen2.5_7b/0.10rps/run2.jtl           30    30   true       10 ms    65 ms   OK
+qwen2.5_7b/0.10rps/run3.jtl           30    30   true       10 ms    23 ms   OK
+qwen2.5_7b/0.20rps/run1.jtl           60    60   true       11 ms    57 ms   OK
+qwen2.5_7b/0.20rps/run2.jtl           60    60   true       11 ms    71 ms   OK
+qwen2.5_7b/0.20rps/run3.jtl           60    60   true       13 ms    34 ms   OK
+gemma3_1b/stress.jtl                 405   405   true       10 ms   738 ms   OK
+
+ACCURACY RUNS
+gemma3:1b      180 predictions       OK (identical to that model's classification lines 2-181)
+gemma3:4b      180 predictions       OK (identical to that model's classification lines 1-180)
+granite3.3:8b  180 predictions       OK (identical to that model's classification lines 1-180)
+qwen2.5:3b     180 predictions       OK (identical to that model's classification lines 1-180)
+qwen2.5:7b     180 predictions       OK (identical to that model's classification lines 1-180)
+
+Everything reconciles.
