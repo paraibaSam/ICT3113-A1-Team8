@@ -169,5 +169,4 @@ committed together with the prediction record before the first benchmark run.
 
 We used Claude (Anthropic) to create the automation scripts: the accuracy test, the load and stress tooling
 (`run_load.ps1`, `make_load_data.js`, `summarize_load.js`, `analyse_stress.js`, `reconcile_logs.js`) and the JMeter
-test plans. The team ran every test on its own machines, checked the outputs against the service logs, and made the
-decisions on requirements, candidate models and the recommendation.
+test plans. The team checked the plans in JMeter, adjusted some JMeter settings, ran every test on its own machines, and checked the results against the service logs. The team made the decisions on requirements, candidate models and the recommendation.
