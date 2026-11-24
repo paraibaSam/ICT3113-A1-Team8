@@ -41,14 +41,17 @@ function parseCategory(rawText) {
   return { category: CATEGORIES[0], fallback_used: true, raw_output: cleaned };
 }
 
-async function classifyTicket(narrative) {
+// `model` defaults to OLLAMA_MODEL (Assignment 1 single-model behaviour). The
+// A2 cascade passes the small or large model explicitly; the prompt, request
+// options and parser are identical for every model.
+async function classifyTicket(narrative, model = OLLAMA_MODEL) {
   const start = Date.now();
 
   const response = await fetch(`${OLLAMA_HOST}/api/generate`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: OLLAMA_MODEL,
+      model,
       prompt: buildPrompt(narrative),
       stream: false,
       options: { temperature: 0 },
@@ -57,7 +60,7 @@ async function classifyTicket(narrative) {
 
   if (!response.ok) {
     const body = await response.text().catch(() => '');
-    throw new Error(`Ollama request failed: ${response.status} ${response.statusText} ${body}`);
+    throw new Error(`Ollama request failed (${model}): ${response.status} ${response.statusText} ${body}`);
   }
 
   const data = await response.json();
@@ -68,7 +71,7 @@ async function classifyTicket(narrative) {
     category,
     fallback_used,
     raw_output,
-    model: OLLAMA_MODEL,
+    model,
     classification_ms: elapsedMs,
   };
 }

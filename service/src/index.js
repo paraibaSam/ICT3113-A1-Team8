@@ -1,6 +1,6 @@
 const express = require('express');
 const { insertTicket, searchTickets, getStats } = require('./db');
-const { classifyTicket } = require('./ollamaClient');
+const { triage, config: cascadeConfig } = require('./cascade');
 const { log, requestLogger } = require('./logger');
 const { CATEGORIES } = require('./categories');
 
@@ -18,9 +18,13 @@ app.get('/health', (req, res) => {
 });
 
 // POST /tickets
-// Baseline behaviour (Assignment 1): fully synchronous. The response is
-// not sent until the model backend has classified the ticket. No caching,
-// no queue - a ticket is classified exactly once, inline, per request.
+// Fully synchronous: the response is not sent until classification is done.
+// No caching, no queue. Assignment 1: one model (OLLAMA_MODEL). Assignment 2:
+// optional category-based cascade (src/cascade.js, docs/escalation_rule.md),
+// in which the small model classifies every ticket and the large model
+// re-classifies tickets whose small-model category is in CASCADE_ESCALATE.
+// The response is {id, category} either way, so the caller cannot tell which
+// model answered; the log records it.
 app.post('/tickets', async (req, res, next) => {
   try {
     const { narrative } = req.body || {};
@@ -29,7 +33,7 @@ app.post('/tickets', async (req, res, next) => {
       return res.status(400).json({ error: 'narrative (non-empty string) is required' });
     }
 
-    const result = await classifyTicket(narrative);
+    const result = await triage(narrative);
 
     const id = insertTicket({
       narrative,
@@ -38,14 +42,15 @@ app.post('/tickets', async (req, res, next) => {
       classification_ms: result.classification_ms,
     });
 
+    // `category` and `model` are the FINAL answer and the model that gave it
+    // (same meaning as in A1). Cascade fields: see docs/escalation_rule.md §6.
     log({
       type: 'classification',
       ticket_id: id,
       category: result.category,
       model: result.model,
       classification_ms: result.classification_ms,
-      fallback_used: result.fallback_used,
-      raw_output: result.fallback_used ? result.raw_output : undefined,
+      ...result.log,
     });
 
     res.status(201).json({ id, category: result.category });
@@ -94,5 +99,5 @@ app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
 });
 
 app.listen(PORT, () => {
-  log({ type: 'startup', message: `ticket-triage-service listening on port ${PORT}` });
+  log({ type: 'startup', message: `ticket-triage-service listening on port ${PORT}`, triage_config: cascadeConfig });
 });
