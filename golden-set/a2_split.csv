@@ -1,0 +1,181 @@
+row_id,final_label,split,position
+8022,Credit reporting,tuning,1
+8024,Money transfer or service,test,2
+8033,Credit card,tuning,3
+8044,Consumer loan,test,4
+8050,Debt collection,tuning,5
+8053,Credit reporting,test,6
+8060,Credit reporting,tuning,7
+8062,Credit reporting,test,8
+8071,Credit reporting,tuning,9
+8074,Credit reporting,test,10
+8094,Money transfer or service,tuning,11
+8095,Bank account or service,test,12
+8096,Bank account or service,tuning,13
+8097,Credit reporting,test,14
+8098,Debt collection,tuning,15
+8106,Mortgage,test,16
+8108,Consumer loan,tuning,17
+8118,Money transfer or service,test,18
+8122,Credit reporting,tuning,19
+8125,Mortgage,test,20
+8128,Consumer loan,tuning,21
+8129,Credit reporting,test,22
+8130,Credit reporting,tuning,23
+8136,Credit card,test,24
+8142,Bank account or service,tuning,25
+8166,Money transfer or service,test,26
+8168,Credit reporting,tuning,27
+8174,Mortgage,test,28
+8180,Credit card,tuning,29
+8184,Credit reporting,test,30
+8203,Money transfer or service,tuning,31
+8206,Mortgage,test,32
+8207,Money transfer or service,tuning,33
+8213,Mortgage,test,34
+8215,Credit reporting,tuning,35
+8222,Bank account or service,test,36
+8225,Credit reporting,tuning,37
+8244,Credit reporting,test,38
+8245,Credit reporting,tuning,39
+8248,Money transfer or service,test,40
+8250,Credit reporting,tuning,41
+8251,Credit reporting,test,42
+8257,Money transfer or service,tuning,43
+8263,Debt collection,test,44
+8264,Bank account or service,tuning,45
+8270,Credit card,test,46
+8274,Credit reporting,tuning,47
+8278,Money transfer or service,test,48
+8284,Money transfer or service,tuning,49
+8287,Credit reporting,test,50
+8291,Credit card,tuning,51
+8292,Credit card,test,52
+8299,Mortgage,tuning,53
+8301,Credit reporting,test,54
+8307,Mortgage,tuning,55
+8309,Consumer loan,test,56
+8310,Credit card,tuning,57
+8323,Credit card,test,58
+8326,Credit reporting,tuning,59
+8333,Consumer loan,test,60
+8335,Bank account or service,tuning,61
+8337,Debt collection,test,62
+8339,Consumer loan,tuning,63
+8342,Bank account or service,test,64
+8345,Money transfer or service,tuning,65
+8356,Mortgage,test,66
+8359,Consumer loan,tuning,67
+8365,Credit reporting,test,68
+8366,Credit card,tuning,69
+8369,Credit card,test,70
+8372,Bank account or service,tuning,71
+8379,Credit card,test,72
+8382,Debt collection,tuning,73
+8383,Mortgage,test,74
+8384,Credit reporting,tuning,75
+8389,Credit reporting,test,76
+8390,Credit card,tuning,77
+8392,Money transfer or service,test,78
+8414,Debt collection,tuning,79
+8418,Credit reporting,test,80
+8420,Credit reporting,tuning,81
+8433,Credit reporting,test,82
+8437,Debt collection,tuning,83
+8441,Credit reporting,test,84
+8444,Bank account or service,tuning,85
+8449,Bank account or service,test,86
+8453,Debt collection,tuning,87
+8455,Money transfer or service,test,88
+8461,Credit card,tuning,89
+8470,Bank account or service,test,90
+8472,Bank account or service,tuning,91
+8473,Debt collection,test,92
+8475,Consumer loan,tuning,93
+8485,Debt collection,test,94
+8487,Credit reporting,tuning,95
+8491,Credit reporting,test,96
+8499,Consumer loan,tuning,97
+8505,Debt collection,test,98
+8528,Credit reporting,tuning,99
+8537,Mortgage,test,100
+8538,Credit card,tuning,101
+8539,Bank account or service,test,102
+8549,Credit card,tuning,103
+8554,Mortgage,test,104
+8558,Credit reporting,tuning,105
+8563,Consumer loan,test,106
+8571,Bank account or service,tuning,107
+8573,Bank account or service,test,108
+8574,Debt collection,tuning,109
+8578,Money transfer or service,test,110
+8585,Credit card,tuning,111
+8586,Credit reporting,test,112
+8591,Credit reporting,tuning,113
+8593,Credit reporting,test,114
+8597,Bank account or service,tuning,115
+8601,Mortgage,test,116
+8603,Bank account or service,tuning,117
+8608,Mortgage,test,118
+8609,Debt collection,tuning,119
+8612,Credit reporting,test,120
+8613,Debt collection,tuning,121
+8615,Money transfer or service,test,122
+8632,Credit reporting,tuning,123
+8638,Consumer loan,test,124
+8644,Consumer loan,tuning,125
+8649,Money transfer or service,test,126
+8661,Credit reporting,tuning,127
+8663,Credit reporting,test,128
+8669,Credit reporting,tuning,129
+8671,Credit reporting,test,130
+8679,Mortgage,tuning,131
+8680,Bank account or service,test,132
+8683,Mortgage,tuning,133
+8688,Money transfer or service,test,134
+8722,Credit card,tuning,135
+8728,Debt collection,test,136
+8732,Credit reporting,tuning,137
+8733,Consumer loan,test,138
+8734,Credit card,tuning,139
+8735,Mortgage,test,140
+8745,Consumer loan,tuning,141
+8748,Mortgage,test,142
+8750,Credit reporting,tuning,143
+8752,Consumer loan,test,144
+8755,Mortgage,tuning,145
+8771,Money transfer or service,test,146
+8773,Credit reporting,tuning,147
+8774,Mortgage,test,148
+8776,Money transfer or service,tuning,149
+8789,Credit reporting,test,150
+8801,Bank account or service,tuning,151
+8815,Credit reporting,test,152
+8821,Money transfer or service,tuning,153
+8827,Bank account or service,test,154
+8831,Mortgage,tuning,155
+8850,Debt collection,test,156
+8856,Money transfer or service,tuning,157
+8872,Mortgage,test,158
+8877,Credit reporting,tuning,159
+8878,Money transfer or service,test,160
+8905,Credit reporting,tuning,161
+8908,Mortgage,test,162
+8910,Consumer loan,tuning,163
+8913,Credit reporting,test,164
+8921,Credit card,tuning,165
+8954,Bank account or service,test,166
+8959,Consumer loan,tuning,167
+8968,Bank account or service,test,168
+8974,Mortgage,tuning,169
+8976,Credit reporting,test,170
+8982,Bank account or service,tuning,171
+8983,Mortgage,test,172
+8988,Credit reporting,tuning,173
+8989,Credit card,test,174
+8990,Credit reporting,tuning,175
+8991,Mortgage,test,176
+8993,Mortgage,tuning,177
+8995,Consumer loan,test,178
+8997,Money transfer or service,tuning,179
+8999,Consumer loan,test,180
