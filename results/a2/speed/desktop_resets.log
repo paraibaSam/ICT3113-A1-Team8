@@ -1,0 +1,1 @@
+{"time":"2026-11-24T06:47:05Z","config":"qwen7b","ollama":"0.34.4","digests":{"qwen2.5:7b":"2bada8a7450677000f678be90653b85d364de7db25eb5ea54136ada5f3933730"},"service":{"mode": "single", "setting": "single", "model": "qwen2.5:7b"},"other_containers":""}
