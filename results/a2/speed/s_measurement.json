@@ -1,0 +1,57 @@
+{
+  "measured_utc": "2026-11-24T06:47:05+00:00",
+  "model": "qwen2.5:7b",
+  "warmups_discarded": [
+    {
+      "row_id": 8692,
+      "seconds": 12.948,
+      "status": 201,
+      "category": "Money transfer or service"
+    },
+    {
+      "row_id": 8714,
+      "seconds": 5.134,
+      "status": 201,
+      "category": "Bank account or service"
+    },
+    {
+      "row_id": 8093,
+      "seconds": 3.589,
+      "status": 201,
+      "category": "Credit card"
+    }
+  ],
+  "s_tickets": [
+    {
+      "row_id": 8073,
+      "chars": 1153,
+      "seconds": 4.419,
+      "status": 201,
+      "category": "Debt collection"
+    },
+    {
+      "row_id": 8511,
+      "chars": 777,
+      "seconds": 2.871,
+      "status": 201,
+      "category": "Money transfer or service"
+    },
+    {
+      "row_id": 8014,
+      "chars": 976,
+      "seconds": 3.439,
+      "status": 201,
+      "category": "Mortgage"
+    }
+  ],
+  "S_seconds": 3.4,
+  "interval_seconds": 6.8,
+  "rate_per_min": 8.8235,
+  "rate_rps": 0.14706,
+  "run_seconds": 300,
+  "expected_requests_per_run": 44,
+  "response_timeout_seconds": 300,
+  "pause_minutes": 6,
+  "client_peak_rps": 0.016,
+  "test_rate_vs_client_peak": "above"
+}
