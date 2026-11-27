@@ -11,6 +11,12 @@
  *     median and maximum gap are printed (the gap is network and client time)
  * Accuracy runs (results/<model>/per_ticket_results.csv):
  *   - the predicted labels equal, in order, a block of that model's classification lines in the log
+ * A2 speed runs (results/a2/speed/<config>/run<N>.jtl + run<N>.meta.json; window: scripts/lib/a2_speed_runs.js):
+ *   - POST /tickets lines in the log = .jtl rows; classification lines = .jtl successes = the /stats increase
+ *   - every classification line has the run's cascade_setting and one of its models; no error lines
+ *   - the same sorted-pairwise time check as above; the escalation count under load is printed
+ * A2 accuracy runs (results/a2/accuracy_cascade/<config>/per_ticket_results.csv):
+ *   - 90 rows, each joined by ticket_id to a classification line with the same category, setting and escalated flag
  *
  * The window is [first request start - 3 s, last response + 1 s] on the load generator's clock. The laptop clock
  * ran about 1 s ahead of the desktop's, which the 3 s lead-in absorbs. Exit code 1 if anything fails to reconcile.
@@ -101,5 +107,59 @@ for (const d of fs.readdirSync(path.join(root, 'results'), { withFileTypes: true
   if (at < 0) failures++;
   console.log(`${want.padEnd(14)} ${pred.length} predictions`.padEnd(34), at >= 0 ? `  OK (identical to that model's classification lines ${at + 1}-${at + pred.length})` : '  DOES NOT RECONCILE');
 }
+// ---- A2 speed runs (results/a2/speed/<config>/run<N>.jtl) ----
+const a2 = require('./lib/a2_speed_runs');
+const a2log = a2.readLog(root);
+const a2runs = a2.findRuns(root);
+console.log('\nA2 SPEED RUNS (window: after the run\'s last warm-up until the last response + 3 s)');
+if (!a2runs.length) console.log('  none yet');
+else console.log('run'.padEnd(18), 'rows'.padStart(5), 'ok'.padStart(4), 'log req'.padStart(8), 'log cls'.padStart(8), '/stats'.padStart(7), 'setting'.padStart(8), 'esc'.padStart(8), 'gap median'.padStart(11), 'gap max'.padStart(8), '  result');
+for (const r of a2runs) {
+  const s = a2.logSection(a2log, r);
+  const okRows = r.rows.filter((x) => x.success === 'true').length;
+  const problems = [];
+  if (!r.meta) problems.push('no meta.json');
+  if (s.requests.length !== r.rows.length) problems.push(`log has ${s.requests.length} POST /tickets, .jtl has ${r.rows.length} rows`);
+  if (s.classifications.length !== okRows) problems.push(`log has ${s.classifications.length} classifications, .jtl has ${okRows} successes`);
+  if (r.meta && r.meta.completed_by_service !== okRows) problems.push(`/stats increase ${r.meta.completed_by_service} != ${okRows} successes`);
+  const badSetting = s.classifications.filter((c) => c.cascade_setting !== r.setting);
+  if (badSetting.length) problems.push(`${badSetting.length} classification(s) not in setting ${r.setting}`);
+  const badModel = s.classifications.filter((c) => !r.models.includes(c.model));
+  if (badModel.length) problems.push(`${badModel.length} classification(s) by an unexpected model`);
+  if (s.errors.length) problems.push(`${s.errors.length} error line(s) in the log`);
+  const jd = r.rows.map((x) => Number(x.elapsed)).sort((a, b) => a - b);
+  const sd = s.requests.map((x) => x.duration_ms).sort((a, b) => a - b);
+  const same = jd.length === sd.length;
+  const gaps = same ? jd.map((v, i) => v - sd[i]) : [];
+  if (same && Math.min(...gaps) < -5) problems.push('a JMeter time is below the service\'s own duration');
+  const esc = r.setting === 'single' ? '-' : `${s.classifications.filter((c) => c.escalated === true).length}/${s.classifications.length}`;
+  if (problems.length) failures++;
+  console.log(r.label.padEnd(18), String(r.rows.length).padStart(5), String(okRows).padStart(4), String(s.requests.length).padStart(8), String(s.classifications.length).padStart(8),
+    String(r.meta ? r.meta.completed_by_service : '-').padStart(7), (badSetting.length ? 'MIXED' : r.setting).padStart(8), esc.padStart(8),
+    (same ? `${median(gaps)} ms` : '-').padStart(11), (same ? `${Math.max(...gaps)} ms` : '-').padStart(8), problems.length ? '  DOES NOT RECONCILE' : '  OK');
+  for (const p of problems) console.log(`    - ${p}`);
+  if (s.window && !s.window.startsWith('after')) console.log(`    (used ${s.window})`);
+}
+
+// ---- A2 cascade accuracy runs (results/a2/accuracy_cascade/<config>/per_ticket_results.csv) ----
+console.log('\nA2 ACCURACY RUNS (each ticket joined to its classification line by ticket_id)');
+const accDir = path.join(root, 'results', 'a2', 'accuracy_cascade');
+const accCfgs = fs.existsSync(accDir) ? fs.readdirSync(accDir).filter((c) => a2.CONFIGS[c] && fs.existsSync(path.join(accDir, c, 'per_ticket_results.csv'))) : [];
+if (!accCfgs.length) console.log('  none yet');
+for (const c of accCfgs) {
+  const rows = parseCsv(fs.readFileSync(path.join(accDir, c, 'per_ticket_results.csv'), 'utf-8'));
+  const sum = JSON.parse(fs.readFileSync(path.join(accDir, c, 'summary.json'), 'utf-8'));
+  const lo = Date.parse(sum.started_utc) - 2000, hi = Date.parse(sum.finished_utc) + 5000; // same machine, same clock
+  const byId = new Map(a2log.filter((e) => e.type === 'classification' && e._t >= lo && e._t <= hi).map((e) => [String(e.ticket_id), e]));
+  const bad = rows.filter((r) => {
+    const e = byId.get(r.ticket_id);
+    return !e || e.category !== r.predicted_label || e.cascade_setting !== a2.CONFIGS[c].setting || String(e.escalated ?? false) !== r.escalated;
+  });
+  if (bad.length || rows.length !== 90) failures++;
+  console.log(`${c.padEnd(10)} ${rows.length} predictions`.padEnd(34), bad.length || rows.length !== 90
+    ? `  DOES NOT RECONCILE (${bad.length} ticket(s) differ from the log: rows ${bad.slice(0, 5).map((r) => r.row_id).join(', ')}${bad.length > 5 ? ', ...' : ''})`
+    : `  OK (all ${rows.length} match the log: category, setting, escalated)`);
+}
+
 console.log(`\n${failures === 0 ? 'Everything reconciles.' : failures + ' item(s) do not reconcile.'}`);
 process.exit(failures === 0 ? 0 : 1);
