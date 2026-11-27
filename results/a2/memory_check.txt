@@ -1,0 +1,60 @@
+A2 memory check: small=gemma3:4b large=qwen2.5:7b
+Time (UTC): 2026-11-24T05:56:01.050Z   Host: DESKTOP-H2TR5SM   Ollama 0.34.4
+Prompt: service/src/ollamaClient.js buildPrompt, options {temperature: 0} (same as the service)
+Tickets: jmeter/load_data.txt lines 815, 816, 817, 818, 819, 820 (non-golden)
+Host memory before: MemTotal=15.20 GiB MemAvailable=10.43 GiB
+
+ollama ps before first call:
+    (no models loaded)
+
+Call 1: gemma3:4b  ticket line 815  HTTP 200  wall=7699 ms  load_duration=7364 ms (first load, expected)  answer="Bank account or service"
+  ollama ps after call 1:
+    gemma3:4b        size=2.68 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:25.605721086Z
+  MemTotal=15.20 GiB MemAvailable=6.60 GiB
+
+Call 2: qwen2.5:7b  ticket line 816  HTTP 200  wall=11480 ms  load_duration=8340 ms (first load, expected)  answer="Consumer loan"
+  ollama ps after call 2:
+    qwen2.5:7b       size=4.71 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:37.088934829Z
+    gemma3:4b        size=2.68 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:25.605721086Z
+  MemTotal=15.20 GiB MemAvailable=1.98 GiB
+
+Call 3: gemma3:4b  ticket line 817  HTTP 200  wall=3926 ms  load_duration=2 ms  answer="Mortgage"
+  ollama ps after call 3:
+    gemma3:4b        size=2.68 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:41.017987058Z
+    qwen2.5:7b       size=4.71 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:37.088934829Z
+  MemTotal=15.20 GiB MemAvailable=1.91 GiB
+
+Call 4: qwen2.5:7b  ticket line 818  HTTP 200  wall=5302 ms  load_duration=2 ms  answer="Mortgage"
+  ollama ps after call 4:
+    qwen2.5:7b       size=4.71 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:46.320582737Z
+    gemma3:4b        size=2.68 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:41.017987058Z
+  MemTotal=15.20 GiB MemAvailable=1.87 GiB
+
+Call 5: gemma3:4b  ticket line 819  HTTP 200  wall=2780 ms  load_duration=2 ms  answer="Debt collection"
+  ollama ps after call 5:
+    gemma3:4b        size=2.68 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:49.105328016Z
+    qwen2.5:7b       size=4.71 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:46.320582737Z
+  MemTotal=15.20 GiB MemAvailable=1.79 GiB
+
+Call 6: qwen2.5:7b  ticket line 820  HTTP 200  wall=1639 ms  load_duration=2 ms  answer="Consumer loan"
+  ollama ps after call 6:
+    qwen2.5:7b       size=4.71 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:50.747049173Z
+    gemma3:4b        size=2.68 GiB  size_vram=0.00 GiB  context=4096  expires=2319-03-06T05:43:49.105328016Z
+  MemTotal=15.20 GiB MemAvailable=1.77 GiB
+
+RESULT: PASS: both models listed by ollama ps after every call once both were loaded; 0 reload(s) after first load.
+
+Literal CLI evidence, 2026-11-24T05:56:40Z: docker compose exec ollama ollama ps
+NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL   
+qwen2.5:7b    845dbda0ea48    5.1 GB    100% CPU     4096       Forever    
+gemma3:4b     a2af6cc3eb7f    2.9 GB    100% CPU     4096       Forever    
+
+Host free -m at the same time:
+               total        used        free      shared  buff/cache   available
+Mem:           15561       13493         143          15        1925        1812
+Swap:           4096           0        4095
+
+Other containers running on the host at the same time:
+ict3113-a1-team8-ollama-1 8.964GiB / 15.2GiB
+lab01-mw-git-server-1 3.855MiB / 15.2GiB
+lab01-mw-mysqldb-1 380MiB / 15.2GiB

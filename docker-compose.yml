@@ -25,6 +25,10 @@ services:
       PORT: 3000
       OLLAMA_HOST: http://ollama:11434
       OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2:1b}
+      # A2 cascade (docs/escalation_rule.md). Leave all three empty for single-model mode.
+      CASCADE_SMALL_MODEL: ${CASCADE_SMALL_MODEL:-}
+      CASCADE_LARGE_MODEL: ${CASCADE_LARGE_MODEL:-}
+      CASCADE_ESCALATE: ${CASCADE_ESCALATE:-}
       DB_PATH: /app/data/tickets.db
       LOG_PATH: /app/data/service.log
     volumes:
