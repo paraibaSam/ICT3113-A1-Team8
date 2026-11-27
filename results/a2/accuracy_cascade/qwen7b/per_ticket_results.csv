@@ -1,0 +1,91 @@
+row_id,final_label,predicted_label,match,http_status,round_trip_ms,error,ticket_id,model,classification_ms,small_category,small_fallback_used,small_ms,escalated,large_category,large_ms,fallback_used,a1_expected,agrees_with_a1
+8024,Money transfer or service,Money transfer or service,true,201,11017,,451,qwen2.5:7b,10973,,,,false,,,false,Money transfer or service,true
+8044,Consumer loan,Credit reporting,false,201,2233,,452,qwen2.5:7b,2228,,,,false,,,false,Credit reporting,true
+8053,Credit reporting,Credit reporting,true,201,1446,,453,qwen2.5:7b,1443,,,,false,,,false,Credit reporting,true
+8062,Credit reporting,Credit reporting,true,201,4038,,454,qwen2.5:7b,4036,,,,false,,,false,Credit reporting,true
+8074,Credit reporting,Credit reporting,true,201,5494,,455,qwen2.5:7b,5491,,,,false,,,false,Credit reporting,true
+8095,Bank account or service,Bank account or service,true,201,3844,,456,qwen2.5:7b,3840,,,,false,,,false,Bank account or service,true
+8097,Credit reporting,Credit reporting,true,201,4294,,457,qwen2.5:7b,4292,,,,false,,,false,Credit reporting,true
+8106,Mortgage,Mortgage,true,201,3281,,458,qwen2.5:7b,3278,,,,false,,,false,Mortgage,true
+8118,Money transfer or service,Money transfer or service,true,201,2049,,459,qwen2.5:7b,2045,,,,false,,,false,Money transfer or service,true
+8125,Mortgage,Mortgage,true,201,4769,,460,qwen2.5:7b,4767,,,,false,,,false,Mortgage,true
+8129,Credit reporting,Credit reporting,true,201,1766,,461,qwen2.5:7b,1762,,,,false,,,false,Credit reporting,true
+8136,Credit card,Credit card,true,201,1417,,462,qwen2.5:7b,1414,,,,false,,,false,Credit card,true
+8166,Money transfer or service,Money transfer or service,true,201,2826,,463,qwen2.5:7b,2823,,,,false,,,false,Money transfer or service,true
+8174,Mortgage,Mortgage,true,201,3699,,464,qwen2.5:7b,3697,,,,false,,,false,Mortgage,true
+8184,Credit reporting,Credit reporting,true,201,1578,,465,qwen2.5:7b,1575,,,,false,,,false,Credit reporting,true
+8206,Mortgage,Mortgage,true,201,2271,,466,qwen2.5:7b,2267,,,,false,,,false,Mortgage,true
+8213,Mortgage,Mortgage,true,201,1531,,467,qwen2.5:7b,1528,,,,false,,,false,Mortgage,true
+8222,Bank account or service,Bank account or service,true,201,1427,,468,qwen2.5:7b,1424,,,,false,,,false,Bank account or service,true
+8244,Credit reporting,Credit reporting,true,201,3105,,469,qwen2.5:7b,3102,,,,false,,,false,Credit reporting,true
+8248,Money transfer or service,Money transfer or service,true,201,2339,,470,qwen2.5:7b,2337,,,,false,,,false,Money transfer or service,true
+8251,Credit reporting,Credit reporting,true,201,6336,,471,qwen2.5:7b,6333,,,,false,,,false,Credit reporting,true
+8263,Debt collection,Debt collection,true,201,2905,,472,qwen2.5:7b,2902,,,,false,,,false,Debt collection,true
+8270,Credit card,Credit card,true,201,1055,,473,qwen2.5:7b,1053,,,,false,,,false,Credit card,true
+8278,Money transfer or service,Money transfer or service,true,201,2116,,474,qwen2.5:7b,2111,,,,false,,,false,Money transfer or service,true
+8287,Credit reporting,Credit reporting,true,201,2101,,475,qwen2.5:7b,2098,,,,false,,,false,Credit reporting,true
+8292,Credit card,Credit card,true,201,6383,,476,qwen2.5:7b,6380,,,,false,,,false,Credit card,true
+8301,Credit reporting,Credit reporting,true,201,2629,,477,qwen2.5:7b,2626,,,,false,,,true,Credit reporting,true
+8309,Consumer loan,Credit reporting,false,201,3072,,478,qwen2.5:7b,3068,,,,false,,,false,Credit reporting,true
+8323,Credit card,Bank account or service,false,201,1645,,479,qwen2.5:7b,1642,,,,false,,,false,Bank account or service,true
+8333,Consumer loan,Debt collection,false,201,1532,,480,qwen2.5:7b,1529,,,,false,,,false,Debt collection,true
+8337,Debt collection,Debt collection,true,201,2435,,481,qwen2.5:7b,2433,,,,false,,,false,Debt collection,true
+8342,Bank account or service,Bank account or service,true,201,4078,,482,qwen2.5:7b,4076,,,,false,,,false,Bank account or service,true
+8356,Mortgage,Consumer loan,false,201,4853,,483,qwen2.5:7b,4851,,,,false,,,false,Consumer loan,true
+8365,Credit reporting,Mortgage,false,201,4361,,484,qwen2.5:7b,4358,,,,false,,,false,Mortgage,true
+8369,Credit card,Credit card,true,201,3489,,485,qwen2.5:7b,3485,,,,false,,,false,Credit card,true
+8379,Credit card,Bank account or service,false,201,1857,,486,qwen2.5:7b,1854,,,,false,,,false,Bank account or service,true
+8383,Mortgage,Mortgage,true,201,4628,,487,qwen2.5:7b,4626,,,,false,,,false,Mortgage,true
+8389,Credit reporting,Credit reporting,true,201,2082,,488,qwen2.5:7b,2078,,,,false,,,false,Credit reporting,true
+8392,Money transfer or service,Consumer loan,false,201,5364,,489,qwen2.5:7b,5361,,,,false,,,false,Consumer loan,true
+8418,Credit reporting,Credit reporting,true,201,2562,,490,qwen2.5:7b,2558,,,,false,,,false,Credit reporting,true
+8433,Credit reporting,Credit reporting,true,201,2739,,491,qwen2.5:7b,2736,,,,false,,,false,Credit reporting,true
+8441,Credit reporting,Credit reporting,true,201,2765,,492,qwen2.5:7b,2762,,,,false,,,false,Credit reporting,true
+8449,Bank account or service,Credit card,false,201,4492,,493,qwen2.5:7b,4489,,,,false,,,false,Credit card,true
+8455,Money transfer or service,Bank account or service,false,201,1463,,494,qwen2.5:7b,1460,,,,false,,,false,Bank account or service,true
+8470,Bank account or service,Bank account or service,true,201,2999,,495,qwen2.5:7b,2998,,,,false,,,false,Bank account or service,true
+8473,Debt collection,Credit reporting,false,201,1240,,496,qwen2.5:7b,1238,,,,false,,,true,Credit reporting,true
+8485,Debt collection,Debt collection,true,201,2147,,497,qwen2.5:7b,2145,,,,false,,,false,Debt collection,true
+8491,Credit reporting,Credit reporting,true,201,1669,,498,qwen2.5:7b,1660,,,,false,,,false,Credit reporting,true
+8505,Debt collection,Credit reporting,false,201,349,,499,qwen2.5:7b,347,,,,false,,,false,Credit reporting,true
+8537,Mortgage,Mortgage,true,201,2843,,500,qwen2.5:7b,2840,,,,false,,,false,Mortgage,true
+8539,Bank account or service,Bank account or service,true,201,6242,,501,qwen2.5:7b,6237,,,,false,,,false,Bank account or service,true
+8554,Mortgage,Mortgage,true,201,3034,,502,qwen2.5:7b,3030,,,,false,,,false,Mortgage,true
+8563,Consumer loan,Credit reporting,false,201,4431,,503,qwen2.5:7b,4428,,,,false,,,true,Credit reporting,true
+8573,Bank account or service,Bank account or service,true,201,1972,,504,qwen2.5:7b,1969,,,,false,,,false,Bank account or service,true
+8578,Money transfer or service,Money transfer or service,true,201,4292,,505,qwen2.5:7b,4290,,,,false,,,false,Money transfer or service,true
+8586,Credit reporting,Credit reporting,true,201,1221,,506,qwen2.5:7b,1218,,,,false,,,false,Credit reporting,true
+8593,Credit reporting,Credit reporting,true,201,2358,,507,qwen2.5:7b,2356,,,,false,,,false,Credit reporting,true
+8601,Mortgage,Mortgage,true,201,4134,,508,qwen2.5:7b,4131,,,,false,,,false,Mortgage,true
+8608,Mortgage,Mortgage,true,201,-129,,509,qwen2.5:7b,-133,,,,false,,,false,Mortgage,true
+8612,Credit reporting,Credit reporting,true,201,1923,,510,qwen2.5:7b,1921,,,,false,,,false,Credit reporting,true
+8615,Money transfer or service,Money transfer or service,true,201,1824,,511,qwen2.5:7b,1822,,,,false,,,false,Money transfer or service,true
+8638,Consumer loan,Consumer loan,true,201,3037,,512,qwen2.5:7b,3034,,,,false,,,false,Consumer loan,true
+8649,Money transfer or service,Money transfer or service,true,201,2982,,513,qwen2.5:7b,2978,,,,false,,,false,Money transfer or service,true
+8663,Credit reporting,Credit reporting,true,201,4689,,514,qwen2.5:7b,4686,,,,false,,,false,Credit reporting,true
+8671,Credit reporting,Credit reporting,true,201,3468,,515,qwen2.5:7b,3465,,,,false,,,false,Credit reporting,true
+8680,Bank account or service,Bank account or service,true,201,2019,,516,qwen2.5:7b,2017,,,,false,,,false,Bank account or service,true
+8688,Money transfer or service,Money transfer or service,true,201,2606,,517,qwen2.5:7b,2604,,,,false,,,false,Money transfer or service,true
+8728,Debt collection,Debt collection,true,201,3588,,518,qwen2.5:7b,3585,,,,false,,,false,Debt collection,true
+8733,Consumer loan,Consumer loan,true,201,1506,,519,qwen2.5:7b,1503,,,,false,,,false,Consumer loan,true
+8735,Mortgage,Debt collection,false,201,3450,,520,qwen2.5:7b,3447,,,,false,,,false,Debt collection,true
+8748,Mortgage,Mortgage,true,201,1414,,521,qwen2.5:7b,1411,,,,false,,,false,Mortgage,true
+8752,Consumer loan,Consumer loan,true,201,4176,,522,qwen2.5:7b,4173,,,,false,,,false,Consumer loan,true
+8771,Money transfer or service,Credit card,false,201,5101,,523,qwen2.5:7b,5098,,,,false,,,false,Credit card,true
+8774,Mortgage,Mortgage,true,201,5617,,524,qwen2.5:7b,5614,,,,false,,,false,Mortgage,true
+8789,Credit reporting,Credit reporting,true,201,3334,,525,qwen2.5:7b,3332,,,,false,,,false,Credit reporting,true
+8815,Credit reporting,Credit reporting,true,201,6588,,526,qwen2.5:7b,6585,,,,false,,,false,Credit reporting,true
+8827,Bank account or service,Bank account or service,true,201,3387,,527,qwen2.5:7b,3383,,,,false,,,false,Bank account or service,true
+8850,Debt collection,Credit reporting,false,201,3818,,528,qwen2.5:7b,3816,,,,false,,,false,Credit reporting,true
+8872,Mortgage,Mortgage,true,201,2883,,529,qwen2.5:7b,2881,,,,false,,,false,Mortgage,true
+8878,Money transfer or service,Money transfer or service,true,201,1419,,530,qwen2.5:7b,1416,,,,false,,,false,Money transfer or service,true
+8908,Mortgage,Mortgage,true,201,2498,,531,qwen2.5:7b,2495,,,,false,,,false,Mortgage,true
+8913,Credit reporting,Credit reporting,true,201,1139,,532,qwen2.5:7b,1137,,,,false,,,false,Credit reporting,true
+8954,Bank account or service,Credit reporting,false,201,5090,,533,qwen2.5:7b,5087,,,,false,,,false,Bank account or service,false
+8968,Bank account or service,Credit card,false,201,2148,,534,qwen2.5:7b,2145,,,,false,,,false,Credit card,true
+8976,Credit reporting,Debt collection,false,201,3858,,535,qwen2.5:7b,3855,,,,false,,,false,Debt collection,true
+8983,Mortgage,Mortgage,true,201,3003,,536,qwen2.5:7b,3001,,,,false,,,false,Mortgage,true
+8989,Credit card,Credit card,true,201,1721,,537,qwen2.5:7b,1719,,,,false,,,false,Credit card,true
+8991,Mortgage,Mortgage,true,201,3580,,538,qwen2.5:7b,3577,,,,false,,,false,Mortgage,true
+8995,Consumer loan,Credit reporting,false,201,2515,,539,qwen2.5:7b,2512,,,,false,,,true,Credit reporting,true
+8999,Consumer loan,Consumer loan,true,201,4605,,540,qwen2.5:7b,4602,,,,false,,,false,Consumer loan,true

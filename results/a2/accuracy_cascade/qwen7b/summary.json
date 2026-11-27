@@ -1,0 +1,138 @@
+{
+  "config": "qwen7b",
+  "label": "qwen2.5:7b (rerun)",
+  "setting": "single",
+  "escalate_set": null,
+  "reset": "READY 2026-11-27T13:06:16Z: config=qwen7b (setting single), Ollama 0.34.4 restarted, no model loaded, digests OK for qwen2.5:7b.",
+  "started_utc": "2026-11-27T13:06:16.652Z",
+  "finished_utc": "2026-11-27T13:10:55.831Z",
+  "n": 90,
+  "correct": 70,
+  "accuracy": 0.7777777777777778,
+  "errors": 0,
+  "escalated": null,
+  "escalation_fraction": null,
+  "accepted": null,
+  "escalated_acc": null,
+  "large_changed_answer": null,
+  "small_fallbacks": null,
+  "final_fallbacks": 4,
+  "per_category": {
+    "Credit reporting": {
+      "n": 25,
+      "correct": 23,
+      "escalated": 0
+    },
+    "Debt collection": {
+      "n": 7,
+      "correct": 4,
+      "escalated": 0
+    },
+    "Mortgage": {
+      "n": 18,
+      "correct": 16,
+      "escalated": 0
+    },
+    "Credit card": {
+      "n": 7,
+      "correct": 5,
+      "escalated": 0
+    },
+    "Bank account or service": {
+      "n": 11,
+      "correct": 8,
+      "escalated": 0
+    },
+    "Consumer loan": {
+      "n": 9,
+      "correct": 4,
+      "escalated": 0
+    },
+    "Money transfer or service": {
+      "n": 13,
+      "correct": 10,
+      "escalated": 0
+    }
+  },
+  "confusion": {
+    "Credit reporting": {
+      "Credit reporting": 23,
+      "Debt collection": 1,
+      "Mortgage": 1,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 0,
+      "Money transfer or service": 0,
+      "Err": 0
+    },
+    "Debt collection": {
+      "Credit reporting": 3,
+      "Debt collection": 4,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 0,
+      "Money transfer or service": 0,
+      "Err": 0
+    },
+    "Mortgage": {
+      "Credit reporting": 0,
+      "Debt collection": 1,
+      "Mortgage": 16,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 1,
+      "Money transfer or service": 0,
+      "Err": 0
+    },
+    "Credit card": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 5,
+      "Bank account or service": 2,
+      "Consumer loan": 0,
+      "Money transfer or service": 0,
+      "Err": 0
+    },
+    "Bank account or service": {
+      "Credit reporting": 1,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 2,
+      "Bank account or service": 8,
+      "Consumer loan": 0,
+      "Money transfer or service": 0,
+      "Err": 0
+    },
+    "Consumer loan": {
+      "Credit reporting": 4,
+      "Debt collection": 1,
+      "Mortgage": 0,
+      "Credit card": 0,
+      "Bank account or service": 0,
+      "Consumer loan": 4,
+      "Money transfer or service": 0,
+      "Err": 0
+    },
+    "Money transfer or service": {
+      "Credit reporting": 0,
+      "Debt collection": 0,
+      "Mortgage": 0,
+      "Credit card": 1,
+      "Bank account or service": 1,
+      "Consumer loan": 1,
+      "Money transfer or service": 10,
+      "Err": 0
+    }
+  },
+  "agrees_with_a1_records": 89,
+  "disagreements": [
+    {
+      "row_id": "8954",
+      "live": "Credit reporting",
+      "a1_expected": "Bank account or service"
+    }
+  ],
+  "problems": []
+}

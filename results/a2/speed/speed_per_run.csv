@@ -1,0 +1,4 @@
+config,name,run,n,succeeded,errors,error_pct,unfinished,stats_delta,p50_ms,p95_ms,mean_ms,max_ms,throughput_rps,arrival_rps,escalated,classified,escalation_pct,small_ms_mean,large_ms_mean_escalated,first_start_utc,last_end_utc
+qwen7b,qwen2.5:7b,run1,44,44,0,0,0,44,3717,11649,5252.8,16970,0.153,0.152,,44,,,5320.7,2026-11-27T11:09:04.405Z,2026-11-27T11:13:51.218Z
+cascadeA,Cascade A,run1,44,0,44,100,44,0,,,NaN,,0,0.151,0,0,,NaN,,2026-11-27T11:23:01.319Z,2026-11-27T11:27:56.136Z
+cascadeB,Cascade B,run1,44,44,0,0,0,44,4411,12237,5477.9,12354,0.15,0.151,11,44,25,4123.1,5323.8,2026-11-27T11:51:00.646Z,2026-11-27T11:55:54.296Z

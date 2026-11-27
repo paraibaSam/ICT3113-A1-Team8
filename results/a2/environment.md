@@ -13,7 +13,7 @@ Re-check the digests and settings before each configuration's speed runs and app
 | Docker version | ✅ 29.5.3 (same as A1) |
 | Classification prompt | ✅ unchanged since A1: `service/src/ollamaClient.js` last changed in `64a0d5f init` |
 | Ollama inference settings | defaults, see below; hold constant for every A2 configuration |
-| Machine | same desktop as A1, 16 logical CPUs, 15.2 GiB RAM visible to WSL2 and Docker |
+| Machine | ⚠️ **not verified to be the A1 machine** (A1 never recorded its hardware; A1's accuracy and load logs were committed by other members, and gemma3:1b, which A1 load-tested, is not on this desktop). A2 desktop: 16 logical CPUs, 15.2 GiB RAM visible to WSL2 and Docker. TODO: team to confirm which machine ran A1 |
 
 ## Model digests
 
