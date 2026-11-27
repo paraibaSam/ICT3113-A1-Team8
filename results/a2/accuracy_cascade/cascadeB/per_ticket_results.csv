@@ -1,0 +1,91 @@
+row_id,final_label,predicted_label,match,http_status,round_trip_ms,error,ticket_id,model,classification_ms,small_category,small_fallback_used,small_ms,escalated,large_category,large_ms,fallback_used,a1_expected,agrees_with_a1
+8024,Money transfer or service,Money transfer or service,true,201,6283,,98,gemma3:4b,6239,Money transfer or service,false,6239,false,,,false,Money transfer or service,true
+8044,Consumer loan,Credit reporting,false,201,2125,,99,gemma3:4b,2121,Credit reporting,false,2121,false,,,false,Credit reporting,true
+8053,Credit reporting,Credit reporting,true,201,1717,,100,gemma3:4b,1713,Credit reporting,false,1713,false,,,false,Credit reporting,true
+8062,Credit reporting,Credit reporting,true,201,3054,,101,gemma3:4b,3050,Credit reporting,false,3050,false,,,false,Credit reporting,true
+8074,Credit reporting,Credit reporting,true,201,2777,,102,gemma3:4b,2774,Credit reporting,false,2774,false,,,false,Credit reporting,true
+8095,Bank account or service,Bank account or service,true,201,18641,,103,qwen2.5:7b,18637,Credit card,false,3883,true,Bank account or service,14754,false,Bank account or service,true
+8097,Credit reporting,Credit reporting,true,201,3196,,104,gemma3:4b,3191,Credit reporting,false,3191,false,,,false,Credit reporting,true
+8106,Mortgage,Mortgage,true,201,2624,,105,gemma3:4b,2620,Mortgage,false,2620,false,,,false,Mortgage,true
+8118,Money transfer or service,Money transfer or service,true,201,2024,,106,gemma3:4b,2020,Money transfer or service,false,2020,false,,,false,Money transfer or service,true
+8125,Mortgage,Mortgage,true,201,3307,,107,gemma3:4b,3305,Mortgage,false,3305,false,,,false,Mortgage,true
+8129,Credit reporting,Credit reporting,true,201,1879,,108,gemma3:4b,1875,Credit reporting,false,1875,false,,,false,Credit reporting,true
+8136,Credit card,Credit card,true,201,1792,,109,qwen2.5:7b,1788,Credit card,false,370,true,Credit card,1418,false,Credit card,true
+8166,Money transfer or service,Money transfer or service,true,201,2332,,110,gemma3:4b,2329,Money transfer or service,false,2329,false,,,false,Money transfer or service,true
+8174,Mortgage,Mortgage,true,201,2764,,111,gemma3:4b,2761,Mortgage,false,2761,false,,,false,Mortgage,true
+8184,Credit reporting,Credit reporting,true,201,1734,,112,gemma3:4b,1731,Credit reporting,false,1731,false,,,false,Credit reporting,true
+8206,Mortgage,Mortgage,true,201,2900,,113,gemma3:4b,2897,Mortgage,false,2897,false,,,false,Mortgage,true
+8213,Mortgage,Mortgage,true,201,1798,,114,gemma3:4b,1795,Mortgage,false,1795,false,,,false,Consumer loan,false
+8222,Bank account or service,Bank account or service,true,201,1949,,115,gemma3:4b,1946,Bank account or service,false,1946,false,,,false,Bank account or service,true
+8244,Credit reporting,Credit reporting,true,201,3004,,116,gemma3:4b,3001,Credit reporting,false,3001,false,,,false,Credit reporting,true
+8248,Money transfer or service,Money transfer or service,true,201,2259,,117,gemma3:4b,2256,Money transfer or service,false,2256,false,,,false,Money transfer or service,true
+8251,Credit reporting,Credit reporting,true,201,4531,,118,gemma3:4b,4529,Credit reporting,false,4529,false,,,false,Credit reporting,true
+8263,Debt collection,Debt collection,true,201,5272,,119,qwen2.5:7b,5270,Debt collection,false,2284,true,Debt collection,2986,false,Debt collection,true
+8270,Credit card,Credit card,true,201,1327,,120,qwen2.5:7b,1325,Credit card,false,235,true,Credit card,1090,false,Credit card,true
+8278,Money transfer or service,Money transfer or service,true,201,2011,,121,gemma3:4b,2008,Money transfer or service,false,2008,false,,,false,Money transfer or service,true
+8287,Credit reporting,Credit reporting,true,201,2031,,122,gemma3:4b,2028,Credit reporting,false,2028,false,,,false,Credit reporting,true
+8292,Credit card,Credit card,true,201,10716,,123,qwen2.5:7b,10713,Credit card,false,4258,true,Credit card,6455,false,Credit card,true
+8301,Credit reporting,Credit reporting,true,201,3350,,124,gemma3:4b,3348,Credit reporting,false,3348,false,,,false,Credit reporting,true
+8309,Consumer loan,Credit reporting,false,201,5989,,125,qwen2.5:7b,5984,Debt collection,false,2714,true,Credit reporting,3270,false,Credit reporting,true
+8323,Credit card,Bank account or service,false,201,1755,,126,gemma3:4b,1751,Bank account or service,false,1751,false,,,false,Bank account or service,true
+8333,Consumer loan,Mortgage,false,201,1559,,127,gemma3:4b,1557,Mortgage,false,1557,false,,,false,Mortgage,true
+8337,Debt collection,Debt collection,true,201,3258,,128,qwen2.5:7b,3255,Credit card,false,2070,true,Debt collection,1185,false,Debt collection,true
+8342,Bank account or service,Bank account or service,true,201,7011,,129,qwen2.5:7b,7009,Credit card,false,2910,true,Bank account or service,4099,false,Bank account or service,true
+8356,Mortgage,Mortgage,true,201,3536,,130,gemma3:4b,3533,Mortgage,false,3533,false,,,false,Mortgage,true
+8365,Credit reporting,Mortgage,false,201,3254,,131,gemma3:4b,3251,Mortgage,false,3251,false,,,false,Mortgage,true
+8369,Credit card,Credit card,true,201,6158,,132,qwen2.5:7b,6155,Credit card,false,2697,true,Credit card,3458,false,Credit card,true
+8379,Credit card,Bank account or service,false,201,3625,,133,qwen2.5:7b,3623,Credit card,false,1763,true,Bank account or service,1860,false,Bank account or service,true
+8383,Mortgage,Mortgage,true,201,4089,,134,gemma3:4b,4087,Mortgage,false,4087,false,,,false,Mortgage,true
+8389,Credit reporting,Credit reporting,true,201,2082,,135,gemma3:4b,2079,Credit reporting,false,2079,false,,,false,Credit reporting,true
+8392,Money transfer or service,Consumer loan,false,201,9071,,136,qwen2.5:7b,9069,Credit card,false,3727,true,Consumer loan,5342,false,Consumer loan,true
+8418,Credit reporting,Credit reporting,true,201,2200,,137,gemma3:4b,2197,Credit reporting,true,2197,false,,,true,Credit reporting,true
+8433,Credit reporting,Credit reporting,true,201,2351,,138,gemma3:4b,2347,Credit reporting,false,2347,false,,,false,Credit reporting,true
+8441,Credit reporting,Credit reporting,true,201,2484,,139,gemma3:4b,2482,Credit reporting,false,2482,false,,,false,Credit reporting,true
+8449,Bank account or service,Credit card,false,201,5800,,140,qwen2.5:7b,5798,Credit card,false,1343,true,Credit card,4455,false,Credit card,true
+8455,Money transfer or service,Bank account or service,false,201,2907,,141,qwen2.5:7b,2905,Credit card,false,1499,true,Bank account or service,1406,false,Bank account or service,true
+8470,Bank account or service,Bank account or service,true,201,2457,,142,gemma3:4b,2455,Bank account or service,false,2455,false,,,false,Bank account or service,true
+8473,Debt collection,Consumer loan,false,201,1536,,143,gemma3:4b,1534,Consumer loan,false,1534,false,,,false,Consumer loan,true
+8485,Debt collection,Debt collection,true,201,4089,,144,qwen2.5:7b,4087,Debt collection,false,1945,true,Debt collection,2142,false,Debt collection,true
+8491,Credit reporting,Credit reporting,true,201,1887,,145,gemma3:4b,1884,Credit reporting,false,1884,false,,,false,Credit reporting,true
+8505,Debt collection,Credit reporting,false,201,2076,,146,gemma3:4b,2074,Credit reporting,false,2074,false,,,false,Credit reporting,true
+8537,Mortgage,Mortgage,true,201,2292,,147,gemma3:4b,2290,Mortgage,false,2290,false,,,false,Mortgage,true
+8539,Bank account or service,Bank account or service,true,201,4121,,148,gemma3:4b,4120,Bank account or service,false,4120,false,,,false,Bank account or service,true
+8554,Mortgage,Mortgage,true,201,2442,,149,gemma3:4b,2440,Mortgage,false,2440,false,,,false,Mortgage,true
+8563,Consumer loan,Consumer loan,true,201,1833,,150,gemma3:4b,1830,Consumer loan,false,1830,false,,,false,Consumer loan,true
+8573,Bank account or service,Bank account or service,true,201,1973,,151,gemma3:4b,1970,Bank account or service,false,1970,false,,,false,Bank account or service,true
+8578,Money transfer or service,Money transfer or service,true,201,3144,,152,gemma3:4b,3142,Money transfer or service,false,3142,false,,,false,Money transfer or service,true
+8586,Credit reporting,Credit reporting,true,201,1586,,153,gemma3:4b,1583,Credit reporting,false,1583,false,,,false,Credit reporting,true
+8593,Credit reporting,Credit reporting,true,201,2158,,154,gemma3:4b,2156,Credit reporting,false,2156,false,,,false,Credit reporting,true
+8601,Mortgage,Mortgage,true,201,3031,,155,gemma3:4b,3029,Mortgage,false,3029,false,,,false,Mortgage,true
+8608,Mortgage,Mortgage,true,201,1631,,156,gemma3:4b,1629,Mortgage,false,1629,false,,,false,Mortgage,true
+8612,Credit reporting,Credit reporting,true,201,1823,,157,gemma3:4b,1821,Credit reporting,false,1821,false,,,false,Credit reporting,true
+8615,Money transfer or service,Money transfer or service,true,201,1854,,158,gemma3:4b,1851,Money transfer or service,false,1851,false,,,false,Money transfer or service,true
+8638,Consumer loan,Mortgage,false,201,2523,,159,gemma3:4b,2521,Mortgage,false,2521,false,,,false,Mortgage,true
+8649,Money transfer or service,Money transfer or service,true,201,2476,,160,gemma3:4b,2473,Money transfer or service,false,2473,false,,,false,Money transfer or service,true
+8663,Credit reporting,Credit reporting,true,201,8103,,161,qwen2.5:7b,8100,Debt collection,false,3450,true,Credit reporting,4650,false,Credit reporting,true
+8671,Credit reporting,Credit reporting,true,201,1497,,162,gemma3:4b,1495,Credit reporting,false,1495,false,,,false,Credit reporting,true
+8680,Bank account or service,Bank account or service,true,201,1967,,163,gemma3:4b,1964,Bank account or service,false,1964,false,,,false,Bank account or service,true
+8688,Money transfer or service,Money transfer or service,true,201,2191,,164,gemma3:4b,2189,Money transfer or service,false,2189,false,,,false,Money transfer or service,true
+8728,Debt collection,Debt collection,true,201,6052,,165,qwen2.5:7b,6049,Debt collection,false,2657,true,Debt collection,3392,false,Debt collection,true
+8733,Consumer loan,Consumer loan,true,201,3034,,166,qwen2.5:7b,3031,Debt collection,false,1569,true,Consumer loan,1462,false,Consumer loan,true
+8735,Mortgage,Mortgage,true,201,2559,,167,gemma3:4b,2557,Mortgage,false,2557,false,,,false,Mortgage,true
+8748,Mortgage,Mortgage,true,201,2286,,168,gemma3:4b,2283,Mortgage,false,2283,false,,,false,Mortgage,true
+8752,Consumer loan,Bank account or service,false,201,3166,,169,gemma3:4b,3164,Bank account or service,false,3164,false,,,false,Bank account or service,true
+8771,Money transfer or service,Credit card,false,201,8530,,170,qwen2.5:7b,8528,Credit card,false,3552,true,Credit card,4976,false,Credit card,true
+8774,Mortgage,Mortgage,true,201,2550,,171,gemma3:4b,2546,Mortgage,false,2546,false,,,false,Mortgage,true
+8789,Credit reporting,Credit reporting,true,201,2840,,172,gemma3:4b,2838,Credit reporting,false,2838,false,,,false,Credit reporting,true
+8815,Credit reporting,Credit reporting,true,201,4777,,173,gemma3:4b,4775,Credit reporting,false,4775,false,,,false,Credit reporting,true
+8827,Bank account or service,Bank account or service,true,201,6113,,174,qwen2.5:7b,6110,Credit card,false,2507,true,Bank account or service,3603,false,Bank account or service,true
+8850,Debt collection,Credit reporting,false,201,3880,,175,gemma3:4b,3877,Credit reporting,false,3877,false,,,false,Credit reporting,true
+8872,Mortgage,Mortgage,true,201,2594,,176,gemma3:4b,2591,Mortgage,false,2591,false,,,false,Mortgage,true
+8878,Money transfer or service,Money transfer or service,true,201,1794,,177,gemma3:4b,1792,Money transfer or service,false,1792,false,,,false,Money transfer or service,true
+8908,Mortgage,Mortgage,true,201,2098,,178,gemma3:4b,2092,Mortgage,false,2092,false,,,false,Mortgage,true
+8913,Credit reporting,Credit reporting,true,201,1663,,179,gemma3:4b,1661,Credit reporting,false,1661,false,,,false,Credit reporting,true
+8954,Bank account or service,Bank account or service,true,201,2581,,180,gemma3:4b,2579,Bank account or service,false,2579,false,,,false,Bank account or service,true
+8968,Bank account or service,Credit card,false,201,4524,,181,qwen2.5:7b,4516,Credit card,false,2231,true,Credit card,2285,false,Credit card,true
+8976,Credit reporting,Consumer loan,false,201,3091,,182,gemma3:4b,3088,Consumer loan,false,3088,false,,,false,Consumer loan,true
+8983,Mortgage,Mortgage,true,201,2552,,183,gemma3:4b,2548,Mortgage,false,2548,false,,,false,Mortgage,true
+8989,Credit card,Credit card,true,201,3486,,184,qwen2.5:7b,3484,Credit card,false,1805,true,Credit card,1679,false,Credit card,true
+8991,Mortgage,Mortgage,true,201,2745,,185,gemma3:4b,2742,Mortgage,false,2742,false,,,false,Mortgage,true
+8995,Consumer loan,Credit reporting,false,201,7531,,186,qwen2.5:7b,7525,Credit card,false,3182,true,Credit reporting,4343,true,Consumer loan,false
+8999,Consumer loan,Consumer loan,true,201,8596,,187,qwen2.5:7b,8592,Credit card,false,3647,true,Consumer loan,4945,false,Consumer loan,true
