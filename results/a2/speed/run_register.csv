@@ -8,3 +8,4 @@
 "qwen7b","3","2026-11-27T13:19:18.8697309Z","2026-11-27T13:31:21.2556156Z","44","44","0","0","44","True","rate(8.8235/min) random_arrivals(300 sec) pause(6 min)","results\a2\speed\qwen7b\run3.jtl"
 "cascadeA","3","2026-11-27T13:34:16.4001663Z","2026-11-27T13:46:18.7055154Z","44","44","0","0","44","True","rate(8.8235/min) random_arrivals(300 sec) pause(6 min)","results\a2\speed\cascadeA\run3.jtl"
 "cascadeB","3","2026-11-27T13:47:27.9815909Z","2026-11-27T13:59:30.3503016Z","44","44","0","0","44","True","rate(8.8235/min) random_arrivals(300 sec) pause(6 min)","results\a2\speed\cascadeB\run3.jtl"
+"cascadeA","1","2026-11-27T14:13:20.1493218Z","2026-11-27T14:25:22.4817494Z","44","44","0","0","44","True","rate(8.8235/min) random_arrivals(300 sec) pause(6 min)","results\a2\speed\cascadeA\run1.jtl"
