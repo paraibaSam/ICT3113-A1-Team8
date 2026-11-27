@@ -1,0 +1,4 @@
+"config","run","start_utc","end_utc","sent","succeeded","errored","unfinished","stats_delta","data_ok","schedule","jtl"
+"qwen7b","1","2026-11-27T11:08:49.1915159Z","2026-11-27T11:20:52.2305820Z","44","44","0","0","44","True","rate(8.8235/min) random_arrivals(300 sec) pause(6 min)","results\a2\speed\qwen7b\run1.jtl"
+"cascadeA","1","2026-11-27T11:22:48.6448468Z","2026-11-27T11:34:51.1182004Z","44","0","44","44","0","False","rate(8.8235/min) random_arrivals(300 sec) pause(6 min)","results\a2\speed\cascadeA\run1.jtl"
+"cascadeB","1","2026-11-27T11:50:47.3948145Z","2026-11-27T12:02:49.7534499Z","44","44","0","0","44","True","rate(8.8235/min) random_arrivals(300 sec) pause(6 min)","results\a2\speed\cascadeB\run1.jtl"
