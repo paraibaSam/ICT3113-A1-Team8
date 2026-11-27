@@ -6287,3 +6287,223 @@
 {"timestamp":"2026-11-27T10:12:17.405Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":7530}
 {"timestamp":"2026-11-27T10:12:26.001Z","type":"classification","ticket_id":187,"category":"Consumer loan","model":"qwen2.5:7b","classification_ms":8592,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":3647,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Consumer loan","large_ms":4945,"large_fallback_used":false,"fallback_used":false}
 {"timestamp":"2026-11-27T10:12:26.002Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":8594}
+{"timestamp":"2026-11-27T11:07:52.420Z","type":"startup","message":"ticket-triage-service listening on port 3000","triage_config":{"mode":"single","setting":"single","model":"qwen2.5:7b"}}
+{"timestamp":"2026-11-27T11:07:53.781Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":3}
+{"timestamp":"2026-11-27T11:07:53.786Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":0}
+{"timestamp":"2026-11-27T11:08:13.013Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":0}
+{"timestamp":"2026-11-27T11:08:28.780Z","type":"classification","ticket_id":188,"category":"Money transfer or service","model":"qwen2.5:7b","classification_ms":11854,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:08:28.780Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":11856}
+{"timestamp":"2026-11-27T11:08:33.777Z","type":"classification","ticket_id":189,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":4917,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:08:33.777Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":4918}
+{"timestamp":"2026-11-27T11:08:37.371Z","type":"classification","ticket_id":190,"category":"Credit card","model":"qwen2.5:7b","classification_ms":3535,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:08:37.371Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3536}
+{"timestamp":"2026-11-27T11:08:37.443Z","type":"request","method":"GET","path":"/stats","status":200,"duration_ms":1}
+{"timestamp":"2026-11-27T11:08:54.788Z","type":"classification","ticket_id":191,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":2810,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:08:54.788Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2810}
+{"timestamp":"2026-11-27T11:08:58.694Z","type":"classification","ticket_id":192,"category":"Debt collection","model":"qwen2.5:7b","classification_ms":2651,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:08:58.695Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2652}
+{"timestamp":"2026-11-27T11:09:04.150Z","type":"classification","ticket_id":193,"category":"Debt collection","model":"qwen2.5:7b","classification_ms":2635,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:09:04.151Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2636}
+{"timestamp":"2026-11-27T11:09:14.046Z","type":"classification","ticket_id":194,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":1804,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:09:14.046Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":1805}
+{"timestamp":"2026-11-27T11:09:31.347Z","type":"classification","ticket_id":195,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":3809,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:09:31.348Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3810}
+{"timestamp":"2026-11-27T11:09:37.233Z","type":"classification","ticket_id":196,"category":"Mortgage","model":"qwen2.5:7b","classification_ms":8575,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:09:37.234Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":8576}
+{"timestamp":"2026-11-27T11:09:39.445Z","type":"classification","ticket_id":197,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":9475,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:09:39.446Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":9476}
+{"timestamp":"2026-11-27T11:09:43.149Z","type":"classification","ticket_id":198,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":5340,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:09:43.150Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":5341}
+{"timestamp":"2026-11-27T11:09:46.253Z","type":"classification","ticket_id":199,"category":"Mortgage","model":"qwen2.5:7b","classification_ms":6797,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:09:46.254Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":6798}
+{"timestamp":"2026-11-27T11:09:48.811Z","type":"classification","ticket_id":200,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":2786,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:09:48.811Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2787}
+{"timestamp":"2026-11-27T11:09:51.135Z","type":"classification","ticket_id":201,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":2327,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:09:51.135Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2327}
+{"timestamp":"2026-11-27T11:09:58.096Z","type":"classification","ticket_id":202,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":6209,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:09:58.096Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":6209}
+{"timestamp":"2026-11-27T11:10:12.375Z","type":"classification","ticket_id":203,"category":"Debt collection","model":"qwen2.5:7b","classification_ms":2519,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:10:12.376Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2520}
+{"timestamp":"2026-11-27T11:10:14.183Z","type":"classification","ticket_id":204,"category":"Money transfer or service","model":"qwen2.5:7b","classification_ms":3679,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:10:14.183Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3680}
+{"timestamp":"2026-11-27T11:10:14.765Z","type":"classification","ticket_id":205,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":1710,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:10:14.766Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":1711}
+{"timestamp":"2026-11-27T11:10:33.841Z","type":"classification","ticket_id":206,"category":"Debt collection","model":"qwen2.5:7b","classification_ms":2850,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:10:33.841Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2850}
+{"timestamp":"2026-11-27T11:10:38.718Z","type":"classification","ticket_id":207,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":2533,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:10:38.719Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2534}
+{"timestamp":"2026-11-27T11:10:43.932Z","type":"classification","ticket_id":208,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":5846,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:10:43.932Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":5846}
+{"timestamp":"2026-11-27T11:10:45.684Z","type":"classification","ticket_id":209,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":3473,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:10:45.685Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3474}
+{"timestamp":"2026-11-27T11:10:47.322Z","type":"classification","ticket_id":210,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":917,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:10:47.322Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":917}
+{"timestamp":"2026-11-27T11:10:57.805Z","type":"classification","ticket_id":211,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":2712,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:10:57.805Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2712}
+{"timestamp":"2026-11-27T11:11:07.214Z","type":"classification","ticket_id":212,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":3890,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:11:07.215Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3891}
+{"timestamp":"2026-11-27T11:11:26.610Z","type":"classification","ticket_id":213,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":3511,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:11:26.610Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3512}
+{"timestamp":"2026-11-27T11:11:33.435Z","type":"classification","ticket_id":214,"category":"Mortgage","model":"qwen2.5:7b","classification_ms":7498,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:11:33.436Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":7499}
+{"timestamp":"2026-11-27T11:11:41.735Z","type":"classification","ticket_id":215,"category":"Mortgage","model":"qwen2.5:7b","classification_ms":2767,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:11:41.736Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2768}
+{"timestamp":"2026-11-27T11:11:47.548Z","type":"classification","ticket_id":216,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":4127,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:11:47.549Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":4128}
+{"timestamp":"2026-11-27T11:11:49.440Z","type":"classification","ticket_id":217,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":3920,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:11:49.440Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3920}
+{"timestamp":"2026-11-27T11:11:53.365Z","type":"classification","ticket_id":218,"category":"Mortgage","model":"qwen2.5:7b","classification_ms":4494,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:11:53.365Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":4495}
+{"timestamp":"2026-11-27T11:11:57.144Z","type":"classification","ticket_id":219,"category":"Credit card","model":"qwen2.5:7b","classification_ms":3765,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:11:57.144Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3766}
+{"timestamp":"2026-11-27T11:12:04.388Z","type":"classification","ticket_id":220,"category":"Debt collection","model":"qwen2.5:7b","classification_ms":10650,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:12:04.389Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":10651}
+{"timestamp":"2026-11-27T11:12:07.529Z","type":"classification","ticket_id":221,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":6211,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:12:07.530Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":6212}
+{"timestamp":"2026-11-27T11:12:11.167Z","type":"classification","ticket_id":222,"category":"Money transfer or service","model":"qwen2.5:7b","classification_ms":9524,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:12:11.167Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":9524}
+{"timestamp":"2026-11-27T11:12:17.631Z","type":"classification","ticket_id":223,"category":"Mortgage","model":"qwen2.5:7b","classification_ms":2436,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:12:17.632Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2437}
+{"timestamp":"2026-11-27T11:12:22.898Z","type":"classification","ticket_id":224,"category":"Mortgage","model":"qwen2.5:7b","classification_ms":2646,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:12:22.899Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2647}
+{"timestamp":"2026-11-27T11:12:34.984Z","type":"classification","ticket_id":225,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":4024,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:12:34.985Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":4025}
+{"timestamp":"2026-11-27T11:12:40.908Z","type":"classification","ticket_id":226,"category":"Debt collection","model":"qwen2.5:7b","classification_ms":7191,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:12:40.909Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":7192}
+{"timestamp":"2026-11-27T11:12:56.455Z","type":"classification","ticket_id":227,"category":"Mortgage","model":"qwen2.5:7b","classification_ms":3777,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:12:56.455Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3778}
+{"timestamp":"2026-11-27T11:13:00.048Z","type":"classification","ticket_id":228,"category":"Credit card","model":"qwen2.5:7b","classification_ms":5619,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:13:00.048Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":5619}
+{"timestamp":"2026-11-27T11:13:03.841Z","type":"classification","ticket_id":229,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":8444,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:13:03.842Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":8445}
+{"timestamp":"2026-11-27T11:13:06.097Z","type":"classification","ticket_id":230,"category":"Money transfer or service","model":"qwen2.5:7b","classification_ms":10228,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:13:06.097Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":10228}
+{"timestamp":"2026-11-27T11:13:09.001Z","type":"classification","ticket_id":231,"category":"Debt collection","model":"qwen2.5:7b","classification_ms":13079,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:13:09.002Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":13080}
+{"timestamp":"2026-11-27T11:13:14.138Z","type":"classification","ticket_id":232,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":17800,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:13:14.139Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":17801}
+{"timestamp":"2026-11-27T11:13:16.883Z","type":"classification","ticket_id":233,"category":"Mortgage","model":"qwen2.5:7b","classification_ms":12205,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:13:16.883Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":12206}
+{"timestamp":"2026-11-27T11:13:39.178Z","type":"classification","ticket_id":234,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":4847,"cascade_setting":"single","fallback_used":false}
+{"timestamp":"2026-11-27T11:13:39.178Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":4848}
+{"timestamp":"2026-11-27T11:20:39.576Z","type":"request","method":"GET","path":"/stats","status":200,"duration_ms":1}
+{"timestamp":"2026-11-27T11:21:54.770Z","type":"startup","message":"ticket-triage-service listening on port 3000","triage_config":{"mode":"cascade","setting":"A","small":"gemma3:4b","large":"qwen2.5:7b","escalate":["Credit card"]}}
+{"timestamp":"2026-11-27T11:21:55.802Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":4}
+{"timestamp":"2026-11-27T11:21:55.807Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":1}
+{"timestamp":"2026-11-27T11:22:03.336Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":1}
+{"timestamp":"2026-11-27T11:22:12.243Z","type":"classification","ticket_id":235,"category":"Money transfer or service","model":"gemma3:4b","classification_ms":6076,"cascade_setting":"A","small_model":"gemma3:4b","small_category":"Money transfer or service","small_ms":6076,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:22:12.244Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":6077}
+{"timestamp":"2026-11-27T11:22:30.641Z","type":"classification","ticket_id":236,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":18298,"cascade_setting":"A","small_model":"gemma3:4b","small_category":"Credit card","small_ms":3465,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Bank account or service","large_ms":14833,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:22:30.642Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":18299}
+{"timestamp":"2026-11-27T11:22:37.145Z","type":"classification","ticket_id":237,"category":"Credit card","model":"qwen2.5:7b","classification_ms":6428,"cascade_setting":"A","small_model":"gemma3:4b","small_category":"Credit card","small_ms":2803,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Credit card","large_ms":3625,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:22:37.145Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":6428}
+{"timestamp":"2026-11-27T11:22:37.183Z","type":"request","method":"GET","path":"/stats","status":200,"duration_ms":2}
+{"timestamp":"2026-11-27T11:34:38.954Z","type":"request","method":"GET","path":"/stats","status":200,"duration_ms":1}
+{"timestamp":"2026-11-27T11:34:55.672Z","type":"startup","message":"ticket-triage-service listening on port 3000","triage_config":{"mode":"cascade","setting":"B","small":"gemma3:4b","large":"qwen2.5:7b","escalate":["Debt collection","Credit card"]}}
+{"timestamp":"2026-11-27T11:34:56.772Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":3}
+{"timestamp":"2026-11-27T11:34:56.777Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":1}
+{"timestamp":"2026-11-27T11:35:00.549Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":0}
+{"timestamp":"2026-11-27T11:35:11.303Z","type":"classification","ticket_id":238,"category":"Money transfer or service","model":"gemma3:4b","classification_ms":7440,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Money transfer or service","small_ms":7440,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:35:11.304Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":7442}
+{"timestamp":"2026-11-27T11:35:29.149Z","type":"classification","ticket_id":239,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":17779,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":3399,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Bank account or service","large_ms":14380,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:35:29.150Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":17780}
+{"timestamp":"2026-11-27T11:49:59.519Z","type":"startup","message":"ticket-triage-service listening on port 3000","triage_config":{"mode":"cascade","setting":"B","small":"gemma3:4b","large":"qwen2.5:7b","escalate":["Debt collection","Credit card"]}}
+{"timestamp":"2026-11-27T11:50:00.629Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":3}
+{"timestamp":"2026-11-27T11:50:00.634Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":0}
+{"timestamp":"2026-11-27T11:50:02.068Z","type":"request","method":"GET","path":"/health","status":200,"duration_ms":1}
+{"timestamp":"2026-11-27T11:50:11.910Z","type":"classification","ticket_id":240,"category":"Money transfer or service","model":"gemma3:4b","classification_ms":7036,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Money transfer or service","small_ms":7036,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:50:11.911Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":7037}
+{"timestamp":"2026-11-27T11:50:29.366Z","type":"classification","ticket_id":241,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":17381,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":3240,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Bank account or service","large_ms":14141,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:50:29.367Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":17382}
+{"timestamp":"2026-11-27T11:50:35.390Z","type":"classification","ticket_id":242,"category":"Credit card","model":"qwen2.5:7b","classification_ms":5957,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":2591,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Credit card","large_ms":3366,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:50:35.391Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":5958}
+{"timestamp":"2026-11-27T11:50:35.413Z","type":"request","method":"GET","path":"/stats","status":200,"duration_ms":2}
+{"timestamp":"2026-11-27T11:50:51.237Z","type":"classification","ticket_id":243,"category":"Bank account or service","model":"gemma3:4b","classification_ms":2514,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Bank account or service","small_ms":2514,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:50:51.238Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2515}
+{"timestamp":"2026-11-27T11:50:53.524Z","type":"classification","ticket_id":244,"category":"Credit reporting","model":"gemma3:4b","classification_ms":4416,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":4416,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:50:53.524Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":4416}
+{"timestamp":"2026-11-27T11:50:55.921Z","type":"classification","ticket_id":245,"category":"Credit reporting","model":"gemma3:4b","classification_ms":6089,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":6089,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:50:55.921Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":6090}
+{"timestamp":"2026-11-27T11:51:04.045Z","type":"classification","ticket_id":246,"category":"Credit reporting","model":"gemma3:4b","classification_ms":2833,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":2833,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:04.046Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2834}
+{"timestamp":"2026-11-27T11:51:08.691Z","type":"classification","ticket_id":247,"category":"Credit reporting","model":"gemma3:4b","classification_ms":3039,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":3039,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:08.692Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3040}
+{"timestamp":"2026-11-27T11:51:12.602Z","type":"classification","ticket_id":248,"category":"Mortgage","model":"gemma3:4b","classification_ms":4861,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Mortgage","small_ms":4861,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:12.603Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":4863}
+{"timestamp":"2026-11-27T11:51:14.693Z","type":"classification","ticket_id":249,"category":"Credit reporting","model":"gemma3:4b","classification_ms":5168,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":5168,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:14.694Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":5169}
+{"timestamp":"2026-11-27T11:51:22.890Z","type":"classification","ticket_id":250,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":9072,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":3537,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Bank account or service","large_ms":5535,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:22.896Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":9079}
+{"timestamp":"2026-11-27T11:51:22.930Z","type":"classification","ticket_id":251,"category":"Mortgage","model":"gemma3:4b","classification_ms":5304,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Mortgage","small_ms":5304,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:22.930Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":5304}
+{"timestamp":"2026-11-27T11:51:25.362Z","type":"classification","ticket_id":252,"category":"Credit reporting","model":"gemma3:4b","classification_ms":2226,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":2226,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:25.362Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2227}
+{"timestamp":"2026-11-27T11:51:30.165Z","type":"classification","ticket_id":253,"category":"Credit reporting","model":"gemma3:4b","classification_ms":2176,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":2176,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:30.165Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2176}
+{"timestamp":"2026-11-27T11:51:42.951Z","type":"classification","ticket_id":254,"category":"Money transfer or service","model":"gemma3:4b","classification_ms":7250,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Money transfer or service","small_ms":7250,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:42.951Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":7251}
+{"timestamp":"2026-11-27T11:51:44.539Z","type":"classification","ticket_id":255,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":12334,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":3947,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Bank account or service","large_ms":8387,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:44.539Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":12334}
+{"timestamp":"2026-11-27T11:51:47.031Z","type":"classification","ticket_id":256,"category":"Debt collection","model":"qwen2.5:7b","classification_ms":12216,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Debt collection","small_ms":4850,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Debt collection","large_ms":7366,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:47.032Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":12217}
+{"timestamp":"2026-11-27T11:51:54.713Z","type":"classification","ticket_id":257,"category":"Credit reporting","model":"gemma3:4b","classification_ms":2121,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":2121,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:54.713Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2121}
+{"timestamp":"2026-11-27T11:51:57.025Z","type":"classification","ticket_id":258,"category":"Consumer loan","model":"gemma3:4b","classification_ms":3954,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Consumer loan","small_ms":3954,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:51:57.025Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3955}
+{"timestamp":"2026-11-27T11:52:02.474Z","type":"classification","ticket_id":259,"category":"Bank account or service","model":"gemma3:4b","classification_ms":2232,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Bank account or service","small_ms":2232,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:52:02.474Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2232}
+{"timestamp":"2026-11-27T11:52:17.964Z","type":"classification","ticket_id":260,"category":"Credit reporting","model":"gemma3:4b","classification_ms":3714,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":3714,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:52:17.965Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3715}
+{"timestamp":"2026-11-27T11:52:19.906Z","type":"classification","ticket_id":261,"category":"Credit reporting","model":"gemma3:4b","classification_ms":5198,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":5198,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:52:19.906Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":5199}
+{"timestamp":"2026-11-27T11:52:24.415Z","type":"classification","ticket_id":262,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":4900,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Debt collection","small_ms":2437,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Bank account or service","large_ms":2463,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:52:24.416Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":4901}
+{"timestamp":"2026-11-27T11:52:40.361Z","type":"classification","ticket_id":263,"category":"Credit reporting","model":"gemma3:4b","classification_ms":2470,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":2470,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:52:40.361Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2470}
+{"timestamp":"2026-11-27T11:52:49.177Z","type":"classification","ticket_id":264,"category":"Credit reporting","model":"gemma3:4b","classification_ms":3016,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":3016,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:52:49.177Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3016}
+{"timestamp":"2026-11-27T11:52:51.903Z","type":"classification","ticket_id":265,"category":"Bank account or service","model":"gemma3:4b","classification_ms":3909,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Bank account or service","small_ms":3909,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:52:51.904Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3910}
+{"timestamp":"2026-11-27T11:53:01.694Z","type":"classification","ticket_id":266,"category":"Mortgage","model":"gemma3:4b","classification_ms":4343,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Mortgage","small_ms":4343,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:53:01.694Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":4343}
+{"timestamp":"2026-11-27T11:53:10.126Z","type":"classification","ticket_id":267,"category":"Mortgage","model":"gemma3:4b","classification_ms":2232,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Mortgage","small_ms":2232,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:53:10.126Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2233}
+{"timestamp":"2026-11-27T11:53:16.103Z","type":"classification","ticket_id":268,"category":"Bank account or service","model":"gemma3:4b","classification_ms":3000,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Bank account or service","small_ms":3000,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:53:16.103Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3000}
+{"timestamp":"2026-11-27T11:53:23.652Z","type":"classification","ticket_id":269,"category":"Mortgage","model":"gemma3:4b","classification_ms":6513,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Mortgage","small_ms":6513,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:53:23.652Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":6513}
+{"timestamp":"2026-11-27T11:53:23.847Z","type":"classification","ticket_id":270,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":7243,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":2410,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Bank account or service","large_ms":4833,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:53:23.847Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":7243}
+{"timestamp":"2026-11-27T11:53:36.148Z","type":"classification","ticket_id":271,"category":"Credit card","model":"qwen2.5:7b","classification_ms":6786,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":2951,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Credit card","large_ms":3835,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:53:36.148Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":6787}
+{"timestamp":"2026-11-27T11:53:52.867Z","type":"classification","ticket_id":272,"category":"Debt collection","model":"qwen2.5:7b","classification_ms":12312,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Debt collection","small_ms":4807,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Debt collection","large_ms":7505,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:53:52.867Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":12312}
+{"timestamp":"2026-11-27T11:54:19.657Z","type":"classification","ticket_id":273,"category":"Credit reporting","model":"qwen2.5:7b","classification_ms":6996,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":2495,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Credit reporting","large_ms":4501,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:19.658Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":6997}
+{"timestamp":"2026-11-27T11:54:23.237Z","type":"classification","ticket_id":274,"category":"Mortgage","model":"gemma3:4b","classification_ms":9696,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Mortgage","small_ms":9696,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:23.237Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":9697}
+{"timestamp":"2026-11-27T11:54:25.228Z","type":"classification","ticket_id":275,"category":"Money transfer or service","model":"qwen2.5:7b","classification_ms":11869,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":6297,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Money transfer or service","large_ms":5572,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:25.229Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":11870}
+{"timestamp":"2026-11-27T11:54:26.198Z","type":"classification","ticket_id":276,"category":"Mortgage","model":"gemma3:4b","classification_ms":11178,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Mortgage","small_ms":11178,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:26.199Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":11179}
+{"timestamp":"2026-11-27T11:54:29.103Z","type":"classification","ticket_id":277,"category":"Bank account or service","model":"gemma3:4b","classification_ms":3751,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Bank account or service","small_ms":3751,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:29.103Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3751}
+{"timestamp":"2026-11-27T11:54:32.949Z","type":"classification","ticket_id":278,"category":"Credit reporting","model":"gemma3:4b","classification_ms":7260,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":7260,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:32.950Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":7261}
+{"timestamp":"2026-11-27T11:54:36.282Z","type":"classification","ticket_id":279,"category":"Mortgage","model":"gemma3:4b","classification_ms":2883,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Mortgage","small_ms":2883,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:36.282Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":2884}
+{"timestamp":"2026-11-27T11:54:46.926Z","type":"classification","ticket_id":280,"category":"Credit card","model":"qwen2.5:7b","classification_ms":6220,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":2736,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Credit card","large_ms":3484,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:46.927Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":6221}
+{"timestamp":"2026-11-27T11:54:51.118Z","type":"classification","ticket_id":281,"category":"Credit reporting","model":"gemma3:4b","classification_ms":3022,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":3022,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:51.119Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3024}
+{"timestamp":"2026-11-27T11:54:53.116Z","type":"classification","ticket_id":282,"category":"Money transfer or service","model":"gemma3:4b","classification_ms":4142,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Money transfer or service","small_ms":4142,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:53.116Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":4142}
+{"timestamp":"2026-11-27T11:54:55.363Z","type":"classification","ticket_id":283,"category":"Credit reporting","model":"gemma3:4b","classification_ms":3748,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":3748,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:54:55.363Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3748}
+{"timestamp":"2026-11-27T11:55:02.353Z","type":"classification","ticket_id":284,"category":"Credit reporting","model":"gemma3:4b","classification_ms":3734,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit reporting","small_ms":3734,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:55:02.354Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3735}
+{"timestamp":"2026-11-27T11:55:04.534Z","type":"classification","ticket_id":285,"category":"Mortgage","model":"gemma3:4b","classification_ms":3627,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Mortgage","small_ms":3627,"small_fallback_used":false,"escalated":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:55:04.535Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":3628}
+{"timestamp":"2026-11-27T11:55:41.489Z","type":"classification","ticket_id":286,"category":"Bank account or service","model":"qwen2.5:7b","classification_ms":8412,"cascade_setting":"B","small_model":"gemma3:4b","small_category":"Credit card","small_ms":3331,"small_fallback_used":false,"escalated":true,"large_model":"qwen2.5:7b","large_category":"Bank account or service","large_ms":5081,"large_fallback_used":false,"fallback_used":false}
+{"timestamp":"2026-11-27T11:55:41.489Z","type":"request","method":"POST","path":"/tickets","status":201,"duration_ms":8412}
+{"timestamp":"2026-11-27T12:02:37.148Z","type":"request","method":"GET","path":"/stats","status":200,"duration_ms":3}
