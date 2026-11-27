@@ -1,0 +1,46 @@
+﻿{
+    "config":  "cascadeA",
+    "run":  1,
+    "start_utc":  "2026-11-27T11:22:48.6448468Z",
+    "end_utc":  "2026-11-27T11:34:51.1182004Z",
+    "schedule":  "rate(8.8235/min) random_arrivals(300 sec) pause(6 min)",
+    "response_timeout_s":  300,
+    "S_seconds":  3.4,
+    "expected_requests":  44,
+    "sent":  44,
+    "succeeded":  0,
+    "errored":  44,
+    "unfinished_cut_off":  44,
+    "stats_before":  237,
+    "stats_after":  237,
+    "completed_by_service":  0,
+    "data_ok":  false,
+    "jmeter_exit":  0,
+    "warmups":  [
+                    {
+                        "id":  235,
+                        "category":  "Money transfer or service",
+                        "seconds":  7.36
+                    },
+                    {
+                        "id":  236,
+                        "category":  "Bank account or service",
+                        "seconds":  17.51
+                    },
+                    {
+                        "id":  237,
+                        "category":  "Credit card",
+                        "seconds":  6.19
+                    }
+                ],
+    "ollama_ps_after_warmup":  [
+                                   "qwen2.5:7b",
+                                   "gemma3:4b"
+                               ],
+    "ollama_ps_after_run":  [
+                                "qwen2.5:7b",
+                                "gemma3:4b"
+                            ],
+    "host":  "10.71.149.225",
+    "jtl":  "results\\a2\\speed\\cascadeA\\run1.jtl"
+}
