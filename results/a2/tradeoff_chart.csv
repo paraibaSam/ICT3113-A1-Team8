@@ -1,0 +1,4 @@
+config,runs,p50_mean_s,p50_min_s,p50_max_s,p95_pooled_s,pooled_n,test_correct,test_n,test_acc_pct,escalation_load_pct,passes_limits,failed_categories,overall_limit_pct
+qwen2.5:7b,3,4.23,3.72,4.88,11.65,132,71,90,78.9,,True,,68.9
+Cascade A,3,3.89,3.62,4.1,12.64,132,70,90,77.8,18.2,False,Consumer loan,68.9
+Cascade B,3,4.29,3.55,4.92,12.43,132,72,90,80,25,True,,68.9

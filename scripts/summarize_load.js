@@ -51,7 +51,9 @@ const mean = (xs) => xs.reduce((a, b) => a + b, 0) / xs.length;
 const sd = (xs) => (xs.length < 2 ? 0 : Math.sqrt(xs.reduce((a, b) => a + (b - mean(xs)) ** 2, 0) / (xs.length - 1)));
 const round = (x, d = 1) => (Number.isFinite(x) ? Math.round(x * 10 ** d) / 10 ** d : NaN);
 
-function summariseJtl(file) {
+// successOnly (A2): latency statistics from successful requests only, as the A2 brief defines p50/p95.
+// A1 (default) used every row; kept so the A1 summaries are reproduced unchanged.
+function summariseJtl(file, successOnly = false) {
   const rows = parseCsv(fs.readFileSync(file, 'utf-8')).filter((r) => r.length > 1);
   const header = rows[0];
   const col = (name) => {
@@ -67,7 +69,8 @@ function summariseJtl(file) {
   const elapsed = data.map((r) => Number(r[iEl]));
   const ends = starts.map((s, i) => s + elapsed[i]);
   const errors = data.filter((r) => r[iOk] !== 'true').length;
-  const sorted = [...elapsed].sort((a, b) => a - b);
+  const latencies = successOnly ? elapsed.filter((_, i) => data[i][iOk] === 'true') : elapsed;
+  const sorted = [...latencies].sort((a, b) => a - b);
   const spanSec = (Math.max(...ends) - Math.min(...starts)) / 1000;
   const arrivalSpanSec = (Math.max(...starts) - Math.min(...starts)) / 1000;
 
@@ -75,7 +78,7 @@ function summariseJtl(file) {
     n: data.length,
     errors,
     error_pct: (100 * errors) / data.length,
-    mean_ms: mean(elapsed),
+    mean_ms: mean(latencies),
     p50_ms: percentile(sorted, 50),
     p95_ms: percentile(sorted, 95),
     p99_ms: percentile(sorted, 99),
@@ -166,6 +169,7 @@ function main() {
  * A2 (Step 4/5): results/a2/speed/<config>/run<N>.jtl (+ meta.json), the service log, and the accuracy results.
  * Writes results/a2/speed/speed_per_run.csv, speed_summary.csv, speed_summary.md, speed_summary.json.
  *
+ *   latency        elapsed time of SUCCESSFUL requests only (brief, Step 4); errors are counted separately
  *   p50            per run (nearest-rank), then the mean and [min-max] across runs
  *   p95            from all runs of a configuration pooled (n stated); no p99 (too few samples)
  *   throughput     completed (successful) requests / (last end - first start) in seconds
@@ -183,7 +187,7 @@ function a2Main(repo) {
   const log = a2.readLog(repo);
 
   const perRun = runs.map((r) => {
-    const s = summariseJtl(r.file);
+    const s = summariseJtl(r.file, true);
     const sec = a2.logSection(log, r);
     const cls = sec.classifications;
     const esc = cls.filter((c) => c.escalated === true);
@@ -198,7 +202,7 @@ function a2Main(repo) {
       small_ms_mean: r.small ? mean(cls.map((c) => c.small_ms)) : '',
       large_ms_mean_escalated: r.small ? (esc.length ? mean(esc.map((c) => c.large_ms)) : '') : (cls.length ? mean(cls.map((c) => c.classification_ms)) : ''),
       first_start_utc: s.first_start_utc, last_end_utc: s.last_end_utc,
-      _elapsed: r.rows.map((x) => Number(x.elapsed)), _cls: cls, _esc: esc.length,
+      _elapsed: r.rows.filter((x) => x.success === 'true').map((x) => Number(x.elapsed)), _cls: cls, _esc: esc.length,
     };
   });
 

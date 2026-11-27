@@ -1,4 +1,4 @@
 config,name,runs,n_per_run,p50_runs,p50_mean,p50_min,p50_max,p50_sd,p95_pooled,pooled_n,throughput_mean,errors,error_pct,unfinished,escalation_load_pct,escalation_test_pct,small_ms_mean,large_ms_mean,accuracy,accuracy_pct,passes_accuracy,failed_categories,p50_vs_qwen,p95_vs_qwen
-qwen7b,qwen2.5:7b,1,44,3717,3717,3717,3717,0,11649,44,0.153,0,0,0,,,,5320.7,71/90,78.9,true,,1,1
-cascadeA,Cascade A,1,44,,NaN,NaN,NaN,0,,0,0,44,100,44,,18.9,NaN,,70/90,77.8,false,Consumer loan,NaN,NaN
-cascadeB,Cascade B,1,44,4411,4411,4411,4411,0,12237,44,0.15,0,0,0,25,25.6,4123.1,5323.8,72/90,80,true,,1.187,1.05
+qwen7b,qwen2.5:7b,3,44/44/44,3717/4103/4881,4233.7,3717,4881,592.9,11649,132,0.15,0,0,0,,,,5323.4,71/90,78.9,true,,1,1
+cascadeA,Cascade A,3,44/44/44,3623/3956/4097,3892,3623,4097,243.4,12644,132,0.147,0,0,0,18.2,18.9,4060.6,5273.8,70/90,77.8,false,Consumer loan,0.919,1.085
+cascadeB,Cascade B,3,44/44/44,4411/4918/3553,4294,3553,4918,690,12431,132,0.149,0,0,0,25,25.6,4182.3,5941.8,72/90,80,true,,1.014,1.067
