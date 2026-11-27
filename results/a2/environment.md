@@ -13,7 +13,7 @@ Re-check the digests and settings before each configuration's speed runs and app
 | Docker version | ✅ 29.5.3 (same as A1) |
 | Classification prompt | ✅ unchanged since A1: `service/src/ollamaClient.js` last changed in `64a0d5f init` |
 | Ollama inference settings | defaults, see below; hold constant for every A2 configuration |
-| Machine | ⚠️ **not verified to be the A1 machine** (A1 never recorded its hardware; A1's accuracy and load logs were committed by other members, and gemma3:1b, which A1 load-tested, is not on this desktop). A2 desktop: 16 logical CPUs, 15.2 GiB RAM visible to WSL2 and Docker. TODO: team to confirm which machine ran A1 |
+| Machine | ⚠️ **different from A1** (confirmed by the team, 27 Nov). A2 desktop: 16 logical CPUs, 15.2 GiB RAM visible to WSL2 and Docker. A1 machine: TODO CPU / RAM. Reason for the change: TODO. See note 4 |
 
 ## Model digests
 
@@ -90,8 +90,9 @@ No Ollama setting was changed for A2.
 ## Notes
 
 1. **Do not `ollama pull` or upgrade.** `docker-compose.yml` uses `ollama/ollama:latest`. Start containers with `docker compose up -d --pull never` so a newer image is never fetched.
-2. **gemma3:1b is missing** from this machine; it was removed at some point after A1. This doesn't affect A2 testing: gemma3:1b fails both accuracy limits on the test set (25/90) using its A1 predictions, so it needs no speed test and isn't a cascade candidate. Its A1 predictions were produced with digest `7cd4618c…` on Ollama 0.34.4 on this machine, which is what the reuse condition requires. **Do not re-pull it.** If it is ever needed, pull it and check that the weights layer digest is `7cd4618c…` before using it.
+2. **gemma3:1b is missing** from this machine; it was removed at some point after A1. This doesn't affect A2 testing: gemma3:1b fails both accuracy limits on the test set (25/90) using its A1 predictions, so it needs no speed test and isn't a cascade candidate. Its A1 predictions were produced with digest `7cd4618c…` on Ollama 0.34.4 on the **A1 machine** (not this one; see note 4). **Do not re-pull it.** If it is ever needed, pull it and check that the weights layer digest is `7cd4618c…` before using it.
 3. **Other containers on the host.** `lab01-mw-mysqldb-1` (about 380 MiB) and `lab01-mw-git-server-1` were running during this check. With both cascade models loaded, only about 1.8 GiB of host RAM is free (see `memory_check.txt`). **Stop these containers before every A2 run** and keep other heavy apps closed, so that conditions are the same for every configuration.
+4. **Machine change.** A2 runs on a different desktop from A1. All A2 speeds are measured here; no A1 speed figure is reused. Single-model accuracy reuse strictly needs the same machine, so qwen2.5:7b (which sets the limits) was re-scored here on the 90 test tickets: 70/90 vs 71/90 in A1, 89/90 answers identical, and limits from either figure give the same pass/fail for every configuration (`results/a2/accuracy_cascade/qwen7b/`). The other single models' A1 records are reused; they all fail by wide margins. TODO: A1 machine specs and the reason for the change.
 
 ## Re-checks before each configuration
 
