@@ -1,0 +1,44 @@
+﻿{
+    "config":  "qwen7b",
+    "run":  2,
+    "start_utc":  "2026-11-27T12:14:55.5391257Z",
+    "end_utc":  "2026-11-27T12:26:57.8486553Z",
+    "schedule":  "rate(8.8235/min) random_arrivals(300 sec) pause(6 min)",
+    "response_timeout_s":  300,
+    "S_seconds":  3.4,
+    "expected_requests":  44,
+    "sent":  44,
+    "succeeded":  44,
+    "errored":  0,
+    "unfinished_cut_off":  0,
+    "stats_before":  312,
+    "stats_after":  356,
+    "completed_by_service":  44,
+    "data_ok":  true,
+    "jmeter_exit":  0,
+    "warmups":  [
+                    {
+                        "id":  310,
+                        "category":  "Money transfer or service",
+                        "seconds":  11.46
+                    },
+                    {
+                        "id":  311,
+                        "category":  "Bank account or service",
+                        "seconds":  4.93
+                    },
+                    {
+                        "id":  312,
+                        "category":  "Credit card",
+                        "seconds":  3.44
+                    }
+                ],
+    "ollama_ps_after_warmup":  [
+                                   "qwen2.5:7b"
+                               ],
+    "ollama_ps_after_run":  [
+                                "qwen2.5:7b"
+                            ],
+    "host":  "10.71.149.225",
+    "jtl":  "results\\a2\\speed\\qwen7b\\run2.jtl"
+}
