@@ -8,6 +8,7 @@
  *
  * Usage:
  *   node scripts/summarize_load.js [rootDir]        (default: <repo>/results/load)
+ *   node scripts/summarize_load.js --a2 [repoRoot]  A2 speed runs, see a2Main() below
  *
  * Writes into rootDir:
  *   per_run_summary.csv   one row per run
@@ -106,6 +107,7 @@ const toCsv = (header, rows) => [header.join(','), ...rows.map((r) => header.map
 const rateValue = (label) => parseFloat(label) || 0;
 
 function main() {
+  if (process.argv[2] === '--a2') return a2Main(path.resolve(process.argv[3] || path.join(__dirname, '..')));
   const root = path.resolve(process.argv[2] || path.join(__dirname, '..', 'results', 'load'));
   if (!fs.existsSync(root)) { console.error(`Folder not found: ${root}`); process.exit(1); }
   const runs = findRuns(root);
@@ -158,6 +160,132 @@ function main() {
   console.log(`Wrote per_run_summary.csv, load_summary.csv, load_summary.md`);
   const short = perRun.map((r) => `${r.model.padEnd(14)} ${r.rate.padEnd(9)} ${r.run.padEnd(5)} n=${String(r.n).padStart(3)} err=${r.errors} p50=${round(r.p50_ms, 0)} p95=${round(r.p95_ms, 0)} p99=${round(r.p99_ms, 0)} thr=${round(r.throughput_rps, 3)} arr=${round(r.arrival_rps, 3)}`);
   console.log(short.join('\n'));
+}
+
+/**
+ * A2 (Step 4/5): results/a2/speed/<config>/run<N>.jtl (+ meta.json), the service log, and the accuracy results.
+ * Writes results/a2/speed/speed_per_run.csv, speed_summary.csv, speed_summary.md, speed_summary.json.
+ *
+ *   p50            per run (nearest-rank), then the mean and [min-max] across runs
+ *   p95            from all runs of a configuration pooled (n stated); no p99 (too few samples)
+ *   throughput     completed (successful) requests / (last end - first start) in seconds
+ *   error rate     rows whose "success" is not "true", pooled
+ *   unfinished     requests cut off by the response timeout (from the run's meta.json)
+ *   escalation     classification lines with escalated=true / all classification lines in the run's log section
+ *   model times    the service's own small_ms / large_ms (or classification_ms) under load, from the log
+ *   accuracy       results/a2/accuracy_all/summary.json (scripts/a2_score_split.js --extra) if it exists
+ */
+function a2Main(repo) {
+  const a2 = require('./lib/a2_speed_runs');
+  const out = path.join(repo, 'results', 'a2', 'speed');
+  const runs = a2.findRuns(repo);
+  if (!runs.length) { console.error(`No A2 runs under ${out} (expected <config>/run<N>.jtl)`); process.exit(1); }
+  const log = a2.readLog(repo);
+
+  const perRun = runs.map((r) => {
+    const s = summariseJtl(r.file);
+    const sec = a2.logSection(log, r);
+    const cls = sec.classifications;
+    const esc = cls.filter((c) => c.escalated === true);
+    const spanSec = (Date.parse(s.last_end_utc) - Date.parse(s.first_start_utc)) / 1000;
+    return {
+      config: r.config, name: r.name, run: r.run, n: s.n, succeeded: s.n - s.errors, errors: s.errors, error_pct: s.error_pct,
+      unfinished: r.meta ? r.meta.unfinished_cut_off : '', stats_delta: r.meta ? r.meta.completed_by_service : '',
+      p50_ms: s.p50_ms, p95_ms: s.p95_ms, mean_ms: s.mean_ms, max_ms: s.max_ms,
+      throughput_rps: (s.n - s.errors) / spanSec, arrival_rps: s.arrival_rps,
+      escalated: r.setting === 'single' ? '' : esc.length, classified: cls.length,
+      escalation_pct: r.setting === 'single' || !cls.length ? '' : (100 * esc.length) / cls.length,
+      small_ms_mean: r.small ? mean(cls.map((c) => c.small_ms)) : '',
+      large_ms_mean_escalated: r.small ? (esc.length ? mean(esc.map((c) => c.large_ms)) : '') : (cls.length ? mean(cls.map((c) => c.classification_ms)) : ''),
+      first_start_utc: s.first_start_utc, last_end_utc: s.last_end_utc,
+      _elapsed: r.rows.map((x) => Number(x.elapsed)), _cls: cls, _esc: esc.length,
+    };
+  });
+
+  const fmt = (r) => Object.fromEntries(Object.entries(r).filter(([k]) => !k.startsWith('_')).map(([k, v]) => [k, typeof v === 'number' ? round(v, k.endsWith('_rps') ? 3 : 1) : v]));
+  const runCols = Object.keys(fmt(perRun[0]));
+  fs.writeFileSync(path.join(out, 'speed_per_run.csv'), toCsv(runCols, perRun.map(fmt)));
+
+  let accuracy = null;
+  const accFile = path.join(repo, 'results', 'a2', 'accuracy_all', 'summary.json');
+  if (fs.existsSync(accFile)) accuracy = JSON.parse(fs.readFileSync(accFile, 'utf-8'));
+  const accTestEsc = (cfg) => {
+    const f = path.join(repo, 'results', 'a2', 'accuracy_cascade', cfg, 'summary.json');
+    return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf-8')).escalation_fraction : null;
+  };
+
+  const groups = [];
+  for (const cfg of Object.keys(a2.CONFIGS)) {
+    const g = perRun.filter((r) => r.config === cfg);
+    if (!g.length) continue;
+    const all = g.flatMap((r) => r._elapsed).sort((a, b) => a - b);
+    const cls = g.flatMap((r) => r._cls);
+    const nEsc = g.reduce((a, r) => a + r._esc, 0);
+    const isCascade = a2.CONFIGS[cfg].setting !== 'single';
+    const acc = accuracy?.configs.find((c) => c.name === a2.CONFIGS[cfg].name);
+    const p50s = g.map((r) => r.p50_ms);
+    const totalN = g.reduce((a, r) => a + r.n, 0), totalErr = g.reduce((a, r) => a + r.errors, 0);
+    groups.push({
+      config: cfg, name: a2.CONFIGS[cfg].name, runs: g.length, n_per_run: g.map((r) => r.n).join('/'),
+      p50_runs: p50s.join('/'), p50_mean: mean(p50s), p50_min: Math.min(...p50s), p50_max: Math.max(...p50s), p50_sd: sd(p50s),
+      p95_pooled: percentile(all, 95), pooled_n: all.length,
+      throughput_mean: mean(g.map((r) => r.throughput_rps)), errors: totalErr, error_pct: (100 * totalErr) / totalN,
+      unfinished: g.reduce((a, r) => a + (Number(r.unfinished) || 0), 0),
+      escalation_load_pct: isCascade && cls.length ? (100 * nEsc) / cls.length : '',
+      escalation_test_pct: isCascade && accTestEsc(cfg) !== null ? 100 * accTestEsc(cfg) : '',
+      small_ms_mean: isCascade ? mean(cls.map((c) => c.small_ms)) : '',
+      large_ms_mean: isCascade ? (nEsc ? mean(cls.filter((c) => c.escalated === true).map((c) => c.large_ms)) : '') : mean(cls.map((c) => c.classification_ms)),
+      accuracy: acc ? `${acc.test.correct}/${acc.test.n}` : '', accuracy_pct: acc ? acc.test.acc : '',
+      passes_accuracy: acc ? acc.pass : '', failed_categories: acc ? acc.failedCats.join('; ') : '',
+    });
+  }
+  const ref = groups.find((g) => g.config === 'qwen7b');
+  for (const g of groups) {
+    g.p50_vs_qwen = ref ? g.p50_mean / ref.p50_mean : '';
+    g.p95_vs_qwen = ref ? g.p95_pooled / ref.p95_pooled : '';
+  }
+  const gfmt = (g) => Object.fromEntries(Object.entries(g).map(([k, v]) => [k, typeof v === 'number' ? round(v, k.endsWith('_qwen') || k.startsWith('throughput') ? 3 : 1) : v]));
+  fs.writeFileSync(path.join(out, 'speed_summary.csv'), toCsv(Object.keys(gfmt(groups[0])), groups.map(gfmt)));
+  fs.writeFileSync(path.join(out, 'speed_summary.json'), JSON.stringify({ per_run: perRun.map(fmt), configs: groups.map(gfmt) }, null, 2) + '\n');
+
+  const s1 = (ms) => (Number.isFinite(ms) ? (ms / 1000).toFixed(1) : '-');
+  const p1 = (x) => (x === '' || x === null ? '-' : `${round(x, 1)}%`);
+  const md = ['# A2 speed test summary', ''];
+  md.push('Generated by `node scripts/summarize_load.js --a2` from `results/a2/speed/<config>/run<N>.jtl`, `data/service.log` and `results/a2/accuracy_all/summary.json`. Times in seconds. Every figure can be traced to a `.jtl` file or the service log (`node scripts/reconcile_logs.js`).', '');
+  md.push('## Per run', '');
+  md.push('| Config | Run | Sent | OK | Errors | Unfinished | /stats Δ | p50 | p95 | Max | Throughput (req/s) | Escalated under load |', '|---|---|---|---|---|---|---|---|---|---|---|---|');
+  for (const r of perRun) md.push(`| ${r.name} | ${r.run} | ${r.n} | ${r.succeeded} | ${r.errors} | ${r.unfinished} | ${r.stats_delta} | ${s1(r.p50_ms)} | ${s1(r.p95_ms)} | ${s1(r.max_ms)} | ${round(r.throughput_rps, 3)} | ${r.escalated === '' ? '-' : `${r.escalated}/${r.classified} (${p1(r.escalation_pct)})`} |`);
+  md.push('', 'Per-run p95 rests on about 2 requests above it, so only the pooled p95 below is used for comparison.', '');
+  md.push('## Per configuration', '');
+  md.push('| Config | Runs (n) | p50 per run | p50 mean [min-max] | p95 pooled (n) | p50 / p95 vs qwen2.5:7b | Throughput | Errors | Unfinished | Escalation: load / test | Accuracy (test) | Passes limits |', '|---|---|---|---|---|---|---|---|---|---|---|---|');
+  for (const g of groups) {
+    md.push(`| ${g.name} | ${g.runs} (${g.n_per_run}) | ${g.p50_runs.split('/').map((x) => s1(Number(x))).join(' / ')} | ${s1(g.p50_mean)} [${s1(g.p50_min)}-${s1(g.p50_max)}] | ${s1(g.p95_pooled)} (${g.pooled_n}) | ${ref ? `${g.p50_vs_qwen.toFixed(2)}× / ${g.p95_vs_qwen.toFixed(2)}×` : '-'} | ${round(g.throughput_mean, 3)} | ${g.errors} (${p1(g.error_pct)}) | ${g.unfinished} | ${g.escalation_load_pct === '' ? '-' : `${p1(g.escalation_load_pct)} / ${p1(g.escalation_test_pct)}`} | ${g.accuracy ? `${g.accuracy} (${p1(g.accuracy_pct)})` : 'not scored yet'} | ${g.passes_accuracy === '' ? '?' : g.passes_accuracy ? 'yes' : `**no** (${g.failed_categories || 'overall'})`} |`);
+  }
+  md.push('', '## Why the cascade is faster or slower (model times under load, from the service log)', '');
+  md.push('Expected cascade time per ticket ≈ small-model time + escalation fraction × large-model time. Queueing at this arrival rate adds to all configurations.', '');
+  md.push('| Config | Small model mean | Large model mean (escalated only for cascades) | Escalation under load | Estimate: small + f × large |', '|---|---|---|---|---|');
+  for (const g of groups) {
+    if (g.small_ms_mean === '') md.push(`| ${g.name} | - | ${s1(g.large_ms_mean)} | - | ${s1(g.large_ms_mean)} |`);
+    else md.push(`| ${g.name} | ${s1(g.small_ms_mean)} | ${s1(g.large_ms_mean)} | ${p1(g.escalation_load_pct)} | ${s1(g.small_ms_mean + (g.escalation_load_pct / 100) * (Number(g.large_ms_mean) || 0))} |`);
+  }
+  md.push('');
+  const passing = groups.filter((g) => g.passes_accuracy === true).sort((a, b) => a.p50_mean - b.p50_mean);
+  md.push('## Fastest configuration within the accuracy limits', '');
+  if (!accuracy) md.push('Accuracy not scored yet: run `scripts/a2_score_split.js --extra` (see `A2_PLAN.md` Phase 6a), then re-run this script.');
+  else if (!passing.length) md.push('No speed-tested configuration passes both accuracy limits.');
+  else {
+    const best = passing[0];
+    const p95Best = [...passing].sort((a, b) => a.p95_pooled - b.p95_pooled)[0];
+    md.push(`By mean p50: **${best.name}** (p50 ${s1(best.p50_mean)} s, pooled p95 ${s1(best.p95_pooled)} s${ref && best !== ref ? `; ${best.p50_vs_qwen.toFixed(2)}× and ${best.p95_vs_qwen.toFixed(2)}× qwen2.5:7b alone` : ''}).`);
+    if (p95Best !== best) md.push('', `Note: by pooled p95 the fastest is ${p95Best.name} (${s1(p95Best.p95_pooled)} s). Say which measure the recommendation uses and why.`);
+    const overlap = passing.length > 1 && passing[1].p50_min <= best.p50_max;
+    if (overlap) md.push('', `Note: the p50 ranges of ${best.name} and ${passing[1].name} overlap across runs, so the difference may be within run-to-run spread.`);
+  }
+  md.push('');
+  fs.writeFileSync(path.join(out, 'speed_summary.md'), md.join('\n'));
+
+  console.log(`Read ${runs.length} A2 run(s). Wrote results/a2/speed/speed_per_run.csv, speed_summary.csv, speed_summary.json, speed_summary.md`);
+  for (const g of groups) console.log(`${g.name.padEnd(11)} runs=${g.runs} p50 mean=${s1(g.p50_mean)} s [${s1(g.p50_min)}-${s1(g.p50_max)}] p95 pooled=${s1(g.p95_pooled)} s (n=${g.pooled_n}) errors=${g.errors}${g.escalation_load_pct === '' ? '' : ` escalated=${p1(g.escalation_load_pct)}`} accuracy=${g.accuracy || '?'} pass=${g.passes_accuracy === '' ? '?' : g.passes_accuracy}`);
 }
 
 main();
